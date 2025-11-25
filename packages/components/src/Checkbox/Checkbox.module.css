@@ -1,0 +1,225 @@
+/**
+ * Checkbox Component Styles
+ *
+ * Based on Figma UI3 Design System specifications
+ */
+
+/* Wrapper - Container for the entire checkbox component */
+.wrapper {
+  display: inline-flex;
+  position: relative;
+  padding: 4px 0;
+}
+
+/* Container - Flex container for checkbox and label */
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Root - The checkbox box itself (16x16px) */
+.root {
+  all: unset;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+
+  /* Default state (unchecked) - Light mode */
+  background-color: var(--color-bg-secondary, #f5f5f5);
+  border: 1px solid var(--color-border, #e6e6e6);
+}
+
+/* Checked and Indeterminate states */
+.root[data-state='checked'],
+.root[data-state='indeterminate'] {
+  background-color: var(--color-bg-brand, #0d99ff);
+  border-color: var(--color-border-selected-strong, #007be5);
+}
+
+/* Focus state - 2px white inset shadow */
+.root:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--color-bg-default, #ffffff);
+}
+
+/* Hover state (non-disabled) */
+.root:not([data-disabled]):hover {
+  border-color: var(--color-border-selected-strong, #007be5);
+}
+
+.root[data-state='checked']:not([data-disabled]):hover,
+.root[data-state='indeterminate']:not([data-disabled]):hover {
+  background-color: var(--color-bg-brand-hover, #0088e6);
+}
+
+/* Disabled state */
+.root[data-disabled] {
+  cursor: not-allowed;
+  background-color: var(--color-bg-disabled, #d9d9d9);
+  border-color: var(--color-border-disabled, #e6e6e6);
+}
+
+.root[data-state='checked'][data-disabled],
+.root[data-state='indeterminate'][data-disabled] {
+  background-color: var(--color-bg-disabled, #d9d9d9);
+  border-color: var(--color-border-disabled, #d9d9d9);
+}
+
+/* Indicator - Container for check/minus icon */
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.indicator[data-state='checked'],
+.indicator[data-state='indeterminate'] {
+  opacity: 1;
+}
+
+/* Icon - Check or Minus icon */
+.icon {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+}
+
+/* Icon color when checked or indeterminate */
+.root[data-state='checked'] .icon,
+.root[data-state='indeterminate'] .icon {
+  color: #ffffff;
+}
+
+/* Icon color when disabled */
+.root[data-disabled] .icon {
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+/* Label wrapper */
+.labelWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 252px;
+  flex: 1;
+}
+
+/* Label text */
+.label {
+  font-family: var(--body-medium-fontfamily, 'Inter', sans-serif);
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 16px;
+  color: var(--color-text, rgba(0, 0, 0, 0.9));
+  cursor: pointer;
+  user-select: none;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label:hover {
+  color: var(--color-text-hover, rgba(0, 0, 0, 1));
+}
+
+.label[data-disabled] {
+  cursor: not-allowed;
+  color: var(--color-text-disabled, rgba(0, 0, 0, 0.3));
+}
+
+/* Required asterisk */
+.required {
+  color: var(--color-text-danger, #f24822);
+}
+
+/* Description text */
+.description {
+  font-family: var(--body-medium-fontfamily, 'Inter', sans-serif);
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 16px;
+  color: var(--color-text-secondary, rgba(0, 0, 0, 0.5));
+  margin-left: 0;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.description[data-disabled] {
+  color: var(--color-text-disabled, rgba(0, 0, 0, 0.3));
+}
+
+/* Disabled wrapper */
+.wrapper[data-disabled] {
+  pointer-events: none;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  .root {
+    background-color: var(--color-bg-secondary, #383838);
+    border-color: var(--color-border, #444444);
+  }
+
+  .root[data-state='checked'],
+  .root[data-state='indeterminate'] {
+    background-color: var(--color-bg-brand, #0c8ce9);
+    border-color: var(--color-border-selected-strong, #7cc4f8);
+  }
+
+  .root:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--color-bg-default, #2c2c2c);
+  }
+
+  .root[data-state='checked']:not([data-disabled]):hover,
+  .root[data-state='indeterminate']:not([data-disabled]):hover {
+    background-color: var(--color-bg-brand-hover, #0b7dd4);
+  }
+
+  .root[data-disabled] {
+    background-color: var(--color-bg-disabled, #757575);
+    border-color: var(--color-border-disabled, #444444);
+  }
+
+  .root[data-state='checked'][data-disabled],
+  .root[data-state='indeterminate'][data-disabled] {
+    background-color: var(--color-bg-disabled, #757575);
+  }
+
+  .root[data-disabled] .icon {
+    color: var(--color-bg-default, #2c2c2c);
+    opacity: 1;
+  }
+
+  .label {
+    color: var(--color-text, #ffffff);
+  }
+
+  .label:hover {
+    color: var(--color-text-hover, #ffffff);
+  }
+
+  .label[data-disabled] {
+    color: var(--color-text-disabled, rgba(255, 255, 255, 0.4));
+  }
+
+  .description {
+    color: var(--color-text-secondary, rgba(255, 255, 255, 0.7));
+  }
+
+  .description[data-disabled] {
+    color: var(--color-text-disabled, rgba(255, 255, 255, 0.4));
+  }
+}

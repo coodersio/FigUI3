@@ -22,6 +22,10 @@ export type { BadgeProps, BadgeVariant, BadgeSize } from './Badge';
 export { Button } from './Button';
 export type { ButtonProps, ButtonVariant, ButtonSize, ButtonType } from './Button';
 
+// Checkbox
+export { Checkbox } from './Checkbox';
+export type { CheckboxProps, CheckedState } from './Checkbox';
+
 // Text
 export { Text } from './Text';
 export type { TextProps, TextVariant, TextSize, TextColor, TextTag } from './Text';
