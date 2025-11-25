@@ -104,3 +104,7 @@ export type {
   TriggerProps as TabsTriggerProps,
   ContentProps as TabsContentProps,
 } from './Tabs';
+
+// Tooltip
+export { TooltipProvider, Tooltip, Hotkey } from './Tooltip';
+export type { TooltipProviderProps, TooltipProps, HotkeyProps } from './Tooltip';

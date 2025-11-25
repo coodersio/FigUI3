@@ -2304,3 +2304,139 @@ html {
 .figui-TabsContent:focus-visible {
   outline: none;
 }
+
+/* ============================================================================
+ * Tooltip Component
+ * ============================================================================ */
+
+/**
+ * Figma UI3 Tooltip Specifications:
+ * - Background: #1e1e1e (dark tooltip)
+ * - Text: #ffffff
+ * - Secondary text: rgba(255,255,255,0.7)
+ * - Padding: 4px 8px
+ * - Border radius: 5px (radius-medium)
+ * - Max width: 200px
+ * - Font: 11px, font-weight 450, line-height 16px
+ * - Shadow: 0px 0px 0.5px rgba(0,0,0,0.15), 0px 5px 12px rgba(0,0,0,0.13), 0px 1px 3px rgba(0,0,0,0.1)
+ * - Arrow: 12px wide, 6px tall
+ */
+
+.figui-TooltipContent {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  max-width: 200px;
+  background-color: var(--color-bg-tooltip, #1e1e1e);
+  color: var(--color-text-tooltip, #ffffff);
+  font-family: var(--font-family, Inter, system-ui, -apple-system, sans-serif);
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 16px;
+  letter-spacing: var(--letter-spacing, 0.005em);
+  white-space: pre-wrap;
+  word-break: break-word;
+  border-radius: var(--radius-medium, 5px);
+  box-shadow:
+    0px 0px 0.5px rgba(0, 0, 0, 0.15),
+    0px 5px 12px rgba(0, 0, 0, 0.13),
+    0px 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  user-select: none;
+}
+
+/* Animation */
+.figui-TooltipContent[data-state='delayed-open'][data-side='top'] {
+  animation: figui-tooltip-slide-up-fade 150ms ease-out;
+}
+.figui-TooltipContent[data-state='delayed-open'][data-side='bottom'] {
+  animation: figui-tooltip-slide-down-fade 150ms ease-out;
+}
+.figui-TooltipContent[data-state='delayed-open'][data-side='left'] {
+  animation: figui-tooltip-slide-left-fade 150ms ease-out;
+}
+.figui-TooltipContent[data-state='delayed-open'][data-side='right'] {
+  animation: figui-tooltip-slide-right-fade 150ms ease-out;
+}
+
+.figui-TooltipContent[data-state='instant-open'][data-side='top'] {
+  animation: figui-tooltip-slide-up-fade 150ms ease-out;
+}
+.figui-TooltipContent[data-state='instant-open'][data-side='bottom'] {
+  animation: figui-tooltip-slide-down-fade 150ms ease-out;
+}
+.figui-TooltipContent[data-state='instant-open'][data-side='left'] {
+  animation: figui-tooltip-slide-left-fade 150ms ease-out;
+}
+.figui-TooltipContent[data-state='instant-open'][data-side='right'] {
+  animation: figui-tooltip-slide-right-fade 150ms ease-out;
+}
+
+.figui-TooltipContent[data-state='closed'] {
+  animation: figui-tooltip-fade-out 100ms ease-in;
+}
+
+@keyframes figui-tooltip-slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes figui-tooltip-slide-down-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes figui-tooltip-slide-left-fade {
+  from {
+    opacity: 0;
+    transform: translateX(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes figui-tooltip-slide-right-fade {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes figui-tooltip-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Arrow */
+.figui-TooltipArrow {
+  fill: var(--color-bg-tooltip, #1e1e1e);
+}
+
+/* Hotkey hint text */
+.figui-TooltipHotkey {
+  color: var(--color-text-tooltip-secondary, rgba(255, 255, 255, 0.7));
+}
