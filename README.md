@@ -131,14 +131,33 @@ Three-layer color architecture:
 
 ## Version Management
 
-This project uses Lerna with independent versioning:
+This project uses [Changesets](https://github.com/changesets/changesets) for version management and npm publishing.
+
+### Adding Changes
+
+When you make changes to packages, create a changeset:
 
 ```bash
-# Create new version
-pnpm version
+pnpm changeset
+```
 
-# Publish packages
-pnpm publish
+This will prompt you to:
+1. Select which packages have changes
+2. Choose version bump type (patch/minor/major)
+3. Write a change description
+
+### Release Process
+
+1. Push code to `main` branch
+2. GitHub Actions will automatically create a "Version Packages" PR
+3. Merge the PR to publish to npm
+
+### Manual Commands
+
+```bash
+pnpm changeset           # Add a changeset
+pnpm version-packages    # Update versions (CI runs this)
+pnpm release             # Build and publish (CI runs this)
 ```
 
 ## License

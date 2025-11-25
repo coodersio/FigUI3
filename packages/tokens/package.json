@@ -1,7 +1,16 @@
 {
   "name": "@figui3/tokens",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Design tokens for FigUI3 Design System",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/figui3.git",
+    "directory": "packages/tokens"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
