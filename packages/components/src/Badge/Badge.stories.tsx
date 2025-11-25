@@ -90,7 +90,7 @@ export const AllVariants: Story = {
           fontWeight: 600,
           fontFamily: 'var(--font-family-base)',
         }}>
-          Strong (Filled) - 16px height, 4px padding
+          Strong (Filled)
         </h3>
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '12px' }}>
           {variants.map((variant) => (
@@ -112,7 +112,7 @@ export const AllVariants: Story = {
           fontWeight: 600,
           fontFamily: 'var(--font-family-base)',
         }}>
-          Light (Outline) - 16px height, 4px padding
+          Light (Outline)
         </h3>
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '12px' }}>
           {variants.map((variant) => (
