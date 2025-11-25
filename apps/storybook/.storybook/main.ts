@@ -1,4 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import { mergeConfig } from 'vite';
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: [
@@ -19,6 +21,17 @@ const config: StorybookConfig = {
   },
   core: {
     disableTelemetry: true,
+  },
+  viteFinal: async (config) => {
+    return mergeConfig(config, {
+      resolve: {
+        alias: {
+          '@figui3/components': path.resolve(__dirname, '../../../packages/components/src'),
+          '@figui3/icons': path.resolve(__dirname, '../../../packages/icons/src'),
+          '@figui3/tokens': path.resolve(__dirname, '../../../packages/tokens/src'),
+        },
+      },
+    });
   },
 };
 
