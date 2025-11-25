@@ -127,3 +127,23 @@ export type {
   DialogPlacement,
   DialogSize,
 } from './Dialog';
+
+// Popover
+export * as Popover from './Popover';
+export type {
+  RootProps as PopoverRootProps,
+  TriggerProps as PopoverTriggerProps,
+  AnchorProps as PopoverAnchorProps,
+  PortalProps as PopoverPortalProps,
+  ContentProps as PopoverContentProps,
+  ArrowProps as PopoverArrowProps,
+  HeaderProps as PopoverHeaderProps,
+  TitleProps as PopoverTitleProps,
+  BodyProps as PopoverBodyProps,
+  CloseProps as PopoverCloseProps,
+  CloseButtonProps as PopoverCloseButtonProps,
+} from './Popover';
+
+// Textarea
+export { Textarea } from './Textarea';
+export type { TextareaProps } from './Textarea';
