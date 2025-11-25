@@ -80,3 +80,10 @@ export type {
   ItemProps as RadioGroupItemProps,
   LabelProps as RadioGroupLabelProps,
 } from './RadioGroup';
+
+// SegmentedControl
+export * as SegmentedControl from './SegmentedControl';
+export type {
+  RootProps as SegmentedControlRootProps,
+  ItemProps as SegmentedControlItemProps,
+} from './SegmentedControl';
