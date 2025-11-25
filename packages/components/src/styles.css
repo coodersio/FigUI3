@@ -2059,3 +2059,142 @@ html {
 .figma-dark .figui-SliderRoot {
   --slider-track-border-color: rgba(255, 255, 255, 0.1);
 }
+
+/* ============================================================================
+ * Switch Component Styles
+ * ============================================================================ */
+
+/*
+ * Figma UI3 Switch specifications:
+ * - Container: 32px × 16px
+ * - Knob: 14px × 14px
+ * - Border radius: full (9999px)
+ * - Knob spacing: 1px from edges
+ */
+
+.figui-SwitchRoot {
+  /* Dimensions - Figma pixel-perfect */
+  --switch-width: 32px;
+  --switch-height: 16px;
+  --switch-knob-size: 14px;
+  --switch-knob-offset: 1px;
+
+  appearance: none;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-tertiary);
+  cursor: pointer;
+  transition: background-color 0.1s ease-out;
+}
+
+/* Checked state - blue background */
+.figui-SwitchRoot[data-state='checked'] {
+  background-color: var(--color-bg-brand);
+}
+
+/* Disabled state */
+.figui-SwitchRoot[data-disabled] {
+  background-color: var(--color-bg-disabled);
+  cursor: not-allowed;
+}
+
+/* Focus state - outer border + inner white inset */
+.figui-SwitchRoot:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 1px var(--color-border-selected-strong),
+    inset 0 0 0 2px #ffffff;
+}
+
+.figui-SwitchRoot[data-state='unchecked']:focus-visible {
+  box-shadow:
+    0 0 0 1px var(--color-border-selected),
+    inset 0 0 0 2px #ffffff;
+}
+
+/* Thumb (Knob) */
+.figui-SwitchThumb {
+  box-sizing: border-box;
+  position: absolute;
+  top: var(--switch-knob-offset);
+  width: var(--switch-knob-size);
+  height: var(--switch-knob-size);
+  border-radius: var(--radius-full);
+  background-color: var(--color-icon-onbrand);
+  transition: left 0.1s ease-out;
+}
+
+/* Unchecked - knob on left */
+.figui-SwitchThumb[data-state='unchecked'] {
+  left: var(--switch-knob-offset);
+}
+
+/* Checked - knob on right */
+.figui-SwitchThumb[data-state='checked'] {
+  left: calc(var(--switch-width) - var(--switch-knob-size) - var(--switch-knob-offset));
+}
+
+/* Disabled thumb in dark mode */
+.figma-dark .figui-SwitchRoot[data-disabled] .figui-SwitchThumb,
+:root[data-figma-theme='dark'] .figui-SwitchRoot[data-disabled] .figui-SwitchThumb {
+  background-color: var(--color-bg-default);
+}
+
+/* Container for switch with label */
+.figui-SwitchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* Row containing switch and label */
+.figui-SwitchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 24px;
+}
+
+/* Label */
+.figui-SwitchLabel {
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 16px;
+  letter-spacing: 0.055px;
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.figui-SwitchLabel-disabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Description */
+.figui-SwitchDescription {
+  margin: 0;
+  padding-left: 40px; /* 32px switch + 8px gap */
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 16px;
+  letter-spacing: 0.055px;
+  color: var(--color-text-secondary);
+}
+
+.figui-SwitchDescription-disabled {
+  color: var(--color-text-disabled);
+}

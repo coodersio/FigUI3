@@ -91,3 +91,7 @@ export type {
 // Slider
 export { Slider } from './Slider';
 export type { SliderProps } from './Slider';
+
+// Switch
+export { Switch } from './Switch';
+export type { SwitchProps } from './Switch';
