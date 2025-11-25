@@ -1,0 +1,34 @@
+diff --git a/dist/index.js b/dist/index.js
+index f5429ee0182f2f87e288285e147d7d019e40fea2..602909890e22f778e948dca0e998ee56ce3088b8 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -561,10 +561,8 @@ function getClosestValueIndex(values, nextValue) {
+   return distances.indexOf(closestDistance);
+ }
+ function getThumbInBoundsOffset(width, left, direction) {
+-  const halfWidth = width / 2;
+-  const halfPercent = 50;
+-  const offset = linearScale([0, halfPercent], [0, halfWidth]);
+-  return (halfWidth - offset(left) * direction) * direction;
++  // Patched: Remove thumb containment to allow pure percentage positioning
++  return 0;
+ }
+ function getStepsBetweenValues(values) {
+   return values.slice(0, -1).map((value, index) => values[index + 1] - value);
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 3968447bff20f19fe31b1fcfd9c77b14a320c16b..6d77150ef5c28d55cdbe1e5dac45eaf752d7b7d5 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -518,10 +518,8 @@ function getClosestValueIndex(values, nextValue) {
+   return distances.indexOf(closestDistance);
+ }
+ function getThumbInBoundsOffset(width, left, direction) {
+-  const halfWidth = width / 2;
+-  const halfPercent = 50;
+-  const offset = linearScale([0, halfPercent], [0, halfWidth]);
+-  return (halfWidth - offset(left) * direction) * direction;
++  // Patched: Remove thumb containment to allow pure percentage positioning
++  return 0;
+ }
+ function getStepsBetweenValues(values) {
+   return values.slice(0, -1).map((value, index) => values[index + 1] - value);
