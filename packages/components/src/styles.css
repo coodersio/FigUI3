@@ -841,6 +841,20 @@ html {
   outline-color: var(--color-border-selected);
 }
 
+/* Dark mode - Button */
+.figma-dark .figui-Button--inverse {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.figma-dark .figui-Button--inverse:hover:not(.figui-Button--disabled):not(.figui-Button--loading) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.figma-dark .figui-Button--inverse:active:not(.figui-Button--disabled):not(.figui-Button--loading) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 /* Disabled State */
 .figui-Button--disabled {
   opacity: 0.4;
@@ -1188,6 +1202,27 @@ html {
   border: 1px solid var(--ramp-grey-400);
   background-color: transparent;
   color: var(--ramp-grey-400);
+}
+
+/* Dark mode - Badge */
+.figma-dark .figui-Badge--strong.figui-Badge--default {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1e1e1e;
+}
+
+.figma-dark .figui-Badge--strong.figui-Badge--invert {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.figma-dark .figui-Badge--light.figui-Badge--default {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.figma-dark .figui-Badge--light.figui-Badge--invert {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* ============================================================================
