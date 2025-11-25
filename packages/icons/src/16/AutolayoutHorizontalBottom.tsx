@@ -16,7 +16,7 @@ export const AutolayoutHorizontalBottom = createIcon({
     <>
     <path
       d="M4 4H6V12H4V4ZM3 4C3 3.44771 3.44771 3 4 3H6C6.55229 3 7 3.44771 7 4V12C7 12.5523 6.55229 13 6 13H4C3.44771 13 3 12.5523 3 12V4ZM10 8H12V12H10V8ZM9 8C9 7.44771 9.44771 7 10 7H12C12.5523 7 13 7.44771 13 8V12C13 12.5523 12.5523 13 12 13H10C9.44771 13 9 12.5523 9 12V8Z"
-      fill="black"
+      fill="currentColor"
     />
     </>
   ),

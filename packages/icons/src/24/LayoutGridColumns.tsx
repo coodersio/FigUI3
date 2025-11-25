@@ -16,7 +16,7 @@ export const LayoutGridColumns = createIcon({
     <>
     <path
       d="M5 5H8V19H5V5ZM11 5H14V19H11V5ZM20 5H17V19H20V5Z"
-      fill="black"
+      fill="currentColor"
     />
     </>
   ),

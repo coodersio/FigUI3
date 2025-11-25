@@ -327,3 +327,242 @@ html {
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-family-base);
 }
+
+/* ============================================================================
+ * Menu/Dropdown/Select Shared Styles (Global for Portals)
+ * ============================================================================ */
+
+/* Menu semantic tokens */
+:root {
+  --color-bg-menu: #1e1e1e;
+  --color-text-menu: #ffffff;
+  --color-text-menu-secondary: rgba(255, 255, 255, 0.8);
+  --color-text-menu-tertiary: rgba(255, 255, 255, 0.4);
+  --color-bg-menu-selected: rgba(255, 255, 255, 0.1);
+  --color-border-menu: rgba(255, 255, 255, 0.1);
+  --color-icon-menu: rgba(255, 255, 255, 0.8);
+  --elevation-menu: 0 2px 14px rgba(0, 0, 0, 0.15), 0 0 0 0.5px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu Content */
+.figui-MenuContent {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+  padding: 8px;
+  background-color: var(--color-bg-menu);
+  border-radius: 6px;
+  font-family: var(--font-family-base, 'Inter', sans-serif);
+  font-size: 11px;
+  font-weight: 450;
+  letter-spacing: 0.055px;
+  color: var(--color-text-menu);
+  box-shadow: var(--elevation-menu);
+  min-width: 140px;
+  z-index: 50;
+  outline: none;
+  animation-duration: 150ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.figui-MenuContent[data-state='open'] {
+  animation-name: figui-menuContentShow;
+}
+
+@keyframes figui-menuContentShow {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Menu Item */
+.figui-MenuItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 8px;
+  color: var(--color-text-menu);
+  line-height: 16px;
+  white-space: nowrap;
+  border-radius: 5px;
+  cursor: default;
+  user-select: none;
+  outline: none;
+}
+
+.figui-MenuItem[data-highlighted] {
+  background-color: var(--color-bg-menu-selected);
+}
+
+.figui-MenuItem[data-disabled] {
+  color: var(--color-text-menu-tertiary);
+  pointer-events: none;
+}
+
+/* Menu Separator */
+.figui-MenuSeparator {
+  margin: 8px 0;
+  height: 1px;
+  background-color: var(--color-border-menu);
+}
+
+/* Menu Label */
+.figui-MenuLabel {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 8px;
+  color: var(--color-text-menu-tertiary);
+  font-size: 11px;
+  font-weight: 450;
+}
+
+/* Menu Group */
+.figui-MenuGroup {
+  padding: 8px 0;
+}
+
+.figui-MenuGroup:first-child {
+  padding-top: 0;
+}
+
+.figui-MenuGroup:last-child {
+  padding-bottom: 0;
+}
+
+.figui-MenuGroup:not(:first-child) {
+  border-top: 1px solid var(--color-border-menu);
+}
+
+/* Checkbox/Radio Items - add padding for indicator */
+.figui-MenuCheckboxItem,
+.figui-MenuRadioItem {
+  padding-left: 24px;
+}
+
+/* Item Indicator */
+.figui-MenuItemIndicator {
+  position: absolute;
+  left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-icon-menu);
+}
+
+/* Subtrigger Caret */
+.figui-MenuSubtriggerCaret {
+  margin-left: auto;
+  margin-right: -8px;
+  padding-left: 24px;
+  color: var(--color-icon-menu);
+}
+
+/* Menu Shortcut */
+.figui-MenuShortcut {
+  margin-left: auto;
+  padding-left: 16px;
+  color: var(--color-text-menu-tertiary);
+  font-size: 11px;
+}
+
+/* Select Trigger */
+.figui-SelectTrigger {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  padding: 0 0 0 8px;
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  font-family: var(--font-family-base, 'Inter', sans-serif);
+  font-size: 11px;
+  font-weight: 450;
+  color: var(--color-text);
+  cursor: default;
+}
+
+.figui-SelectTrigger:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.figui-SelectTrigger:focus {
+  border-color: var(--color-border-selected);
+  box-shadow: 0 0 0 1px var(--color-border-selected);
+}
+
+.figui-SelectTrigger[data-disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.figui-SelectTrigger[data-placeholder] .figui-SelectValue {
+  color: var(--color-text-tertiary);
+}
+
+/* Select Trigger Width Variants */
+.figui-SelectTrigger[data-width='col1'] {
+  width: 88px;
+}
+
+.figui-SelectTrigger[data-width='col2'] {
+  width: 184px;
+}
+
+.figui-SelectTrigger[data-width='col3'] {
+  width: 280px;
+}
+
+.figui-SelectTrigger[data-width='full'] {
+  width: 100%;
+}
+
+/* Select Trigger Icon */
+.figui-SelectTriggerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-icon-secondary);
+}
+
+/* Select Leading Icon */
+.figui-SelectLeadingIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-icon-secondary);
+}
+
+/* Select Value */
+.figui-SelectValue {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Select Viewport */
+.figui-SelectViewport {
+  padding: 0;
+}
+
+/* Select Scroll Button */
+.figui-SelectScrollButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  color: var(--color-icon-menu);
+  cursor: default;
+}

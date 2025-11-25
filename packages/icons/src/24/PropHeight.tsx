@@ -16,7 +16,7 @@ export const PropHeight = createIcon({
     <>
     <path
       d="M8.84521 16V8H9.93506V11.5195H14.064V8H15.1499V16H14.064V12.4687H9.93506V16H8.84521Z"
-      fill="black"
+      fill="currentColor"
     />
     </>
   ),

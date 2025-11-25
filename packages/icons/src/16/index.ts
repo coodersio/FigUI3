@@ -33,6 +33,7 @@ export { Branch } from './Branch';
 export { Check } from './Check';
 export { ChevronDown } from './ChevronDown';
 export { ChevronRight } from './ChevronRight';
+export { ChevronUp } from './ChevronUp';
 export { Close } from './Close';
 export { Community } from './Community';
 export { Complexvector } from './Complexvector';

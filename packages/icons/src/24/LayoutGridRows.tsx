@@ -16,7 +16,7 @@ export const LayoutGridRows = createIcon({
     <>
     <path
       d="M5 5H19V8H5V5ZM5 11H19V14H5V11ZM19 17H5V20H19V17Z"
-      fill="black"
+      fill="currentColor"
     />
     </>
   ),
