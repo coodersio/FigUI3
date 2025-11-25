@@ -35,7 +35,6 @@ import React, { useId } from 'react';
 import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { Check } from '@figui3/icons/16';
 import type { CheckboxProps } from './Checkbox.types';
-import styles from './Checkbox.module.css';
 
 export const Checkbox = React.forwardRef<
   React.ElementRef<typeof RadixCheckbox.Root>,
@@ -69,15 +68,15 @@ export const Checkbox = React.forwardRef<
 
     return (
       <div
-        className={`${styles.wrapper} ${className || ''}`}
+        className={`figui-Checkbox__wrapper ${className || ''}`}
         style={style}
         data-disabled={disabled ? '' : undefined}
       >
-        <div className={styles.container}>
+        <div className="figui-Checkbox__container">
           <RadixCheckbox.Root
             ref={ref}
             id={id}
-            className={styles.root}
+            className="figui-Checkbox__root"
             checked={checked}
             defaultChecked={defaultChecked}
             onCheckedChange={onCheckedChange}
@@ -90,7 +89,7 @@ export const Checkbox = React.forwardRef<
             {...props}
           >
             <RadixCheckbox.Indicator
-              className={styles.indicator}
+              className="figui-Checkbox__indicator"
               forceMount
               data-state={
                 checked === 'indeterminate'
@@ -110,7 +109,7 @@ export const Checkbox = React.forwardRef<
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true"
-                      className={styles.icon}
+                      className="figui-Checkbox__icon"
                     >
                       <path
                         d="M4 8H12"
@@ -120,7 +119,7 @@ export const Checkbox = React.forwardRef<
                       />
                     </svg>
                   ) : (
-                    <Check size={16} className={styles.icon} aria-hidden="true" />
+                    <Check size={16} className="figui-Checkbox__icon" aria-hidden="true" />
                   )}
                 </>
               )}
@@ -128,17 +127,17 @@ export const Checkbox = React.forwardRef<
           </RadixCheckbox.Root>
 
           {(label || description) && (
-            <div className={styles.labelWrapper}>
+            <div className="figui-Checkbox__labelWrapper">
               {label && (
                 <label
                   id={labelId}
                   htmlFor={id}
-                  className={styles.label}
+                  className="figui-Checkbox__label"
                   data-disabled={disabled ? '' : undefined}
                 >
                   {label}
                   {required && (
-                    <span className={styles.required} aria-label="required">
+                    <span className="figui-Checkbox__required" aria-label="required">
                       {' '}
                       *
                     </span>
@@ -149,7 +148,7 @@ export const Checkbox = React.forwardRef<
               {description && (
                 <div
                   id={descriptionId}
-                  className={styles.description}
+                  className="figui-Checkbox__description"
                   data-disabled={disabled ? '' : undefined}
                 >
                   {description}

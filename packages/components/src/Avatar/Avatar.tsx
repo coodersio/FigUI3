@@ -6,7 +6,6 @@
 
 import React from 'react';
 import type { AvatarProps } from './Avatar.types';
-import styles from './Avatar.module.css';
 
 export const Avatar: React.FC<AvatarProps> = ({
   variant = 'grey',
@@ -19,11 +18,11 @@ export const Avatar: React.FC<AvatarProps> = ({
   className = '',
 }) => {
   const classNames = [
-    styles.avatar,
-    styles[`avatar--${size}`],
-    styles[`avatar--${shape}`],
-    styles[`avatar--${variant}`],
-    styles[`avatar--${state}`],
+    'figui-Avatar',
+    `figui-Avatar--${size}`,
+    `figui-Avatar--${shape}`,
+    `figui-Avatar--${variant}`,
+    `figui-Avatar--${state}`,
     className,
   ]
     .filter(Boolean)
@@ -33,7 +32,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   if (variant === 'photo' && src) {
     return (
       <div className={classNames}>
-        <img src={src} alt={alt} className={styles.avatar__image} />
+        <img src={src} alt={alt} className="figui-Avatar__image" />
       </div>
     );
   }
@@ -42,7 +41,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   if (variant === 'overflow-unread' || variant === 'overflow-read') {
     return (
       <div className={classNames}>
-        <span className={styles.avatar__overflow}>+</span>
+        <span className="figui-Avatar__overflow">+</span>
       </div>
     );
   }
@@ -51,7 +50,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   return (
     <div className={classNames}>
       {initials && (
-        <span className={styles.avatar__initials}>{initials.slice(0, 2)}</span>
+        <span className="figui-Avatar__initials">{initials.slice(0, 2)}</span>
       )}
     </div>
   );

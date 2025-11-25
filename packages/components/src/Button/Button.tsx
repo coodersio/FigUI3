@@ -6,65 +6,70 @@
 
 import React from 'react';
 import type { ButtonProps } from './Button.types';
-import styles from './Button.module.css';
 
-export const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  size = 'default',
-  buttonType = 'default',
-  disabled = false,
-  loading = false,
-  iconLead,
-  iconTrail,
-  children,
-  className = '',
-  htmlType = 'button',
-  ...restProps
-}) => {
-  const isIconOnly = buttonType === 'icon' || buttonType === 'icon-toggle';
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      variant = 'primary',
+      size = 'default',
+      buttonType = 'default',
+      disabled = false,
+      loading = false,
+      iconLead,
+      iconTrail,
+      children,
+      className = '',
+      htmlType = 'button',
+      ...restProps
+    },
+    ref
+  ) => {
+    const isIconOnly = buttonType === 'icon' || buttonType === 'icon-toggle';
 
-  const classNames = [
-    styles.button,
-    styles[`button--${variant}`],
-    styles[`button--${size}`],
-    styles[`button--${buttonType}`],
-    disabled && styles['button--disabled'],
-    loading && styles['button--loading'],
-    className,
-  ]
-    .filter(Boolean)
-    .join(' ');
+    const classNames = [
+      'figui-Button',
+      `figui-Button--${variant}`,
+      `figui-Button--${size}`,
+      `figui-Button--${buttonType}`,
+      disabled && 'figui-Button--disabled',
+      loading && 'figui-Button--loading',
+      className,
+    ]
+      .filter(Boolean)
+      .join(' ');
 
-  return (
-    <button
-      className={classNames}
-      disabled={disabled || loading}
-      type={htmlType}
-      {...restProps}
-    >
-      {loading && (
-        <span className={styles.button__loader}>
-          <span className={styles.button__spinner} />
-        </span>
-      )}
+    return (
+      <button
+        ref={ref}
+        className={classNames}
+        disabled={disabled || loading}
+        type={htmlType}
+        {...restProps}
+      >
+        {loading && (
+          <span className="figui-Button__loader">
+            <span className="figui-Button__spinner" />
+          </span>
+        )}
 
-      {!loading && iconLead && (
-        <span className={styles.button__icon}>{iconLead}</span>
-      )}
+        {!loading && iconLead && (
+          <span className="figui-Button__icon">{iconLead}</span>
+        )}
 
-      {!isIconOnly && children && (
-        <span className={styles.button__text}>{children}</span>
-      )}
+        {!isIconOnly && children && (
+          <span className="figui-Button__text">{children}</span>
+        )}
 
-      {isIconOnly && !loading && children && (
-        <span className={styles.button__icon}>{children}</span>
-      )}
+        {isIconOnly && !loading && children && (
+          <span className="figui-Button__icon">{children}</span>
+        )}
 
-      {!loading && iconTrail && (
-        <span className={styles.button__icon}>{iconTrail}</span>
-      )}
-    </button>
-  );
-};
+        {!loading && iconTrail && (
+          <span className="figui-Button__icon">{iconTrail}</span>
+        )}
+      </button>
+    );
+  }
+);
 
 Button.displayName = 'Button';

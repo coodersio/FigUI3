@@ -6,7 +6,6 @@
 
 import React from 'react';
 import type { BadgeProps } from './Badge.types';
-import styles from './Badge.module.css';
 
 export const Badge: React.FC<BadgeProps> = ({
   variant = 'default',
@@ -16,9 +15,9 @@ export const Badge: React.FC<BadgeProps> = ({
   className = '',
 }) => {
   const classNames = [
-    styles.badge,
-    styles[`badge--${variant}`],
-    strong ? styles['badge--strong'] : styles['badge--light'],
+    'figui-Badge',
+    `figui-Badge--${variant}`,
+    strong ? 'figui-Badge--strong' : 'figui-Badge--light',
     className,
   ]
     .filter(Boolean)
@@ -26,8 +25,8 @@ export const Badge: React.FC<BadgeProps> = ({
 
   return (
     <span className={classNames}>
-      {iconLead && <span className={styles.badge__icon}>{iconLead}</span>}
-      <span className={styles.badge__text}>{children}</span>
+      {iconLead && <span className="figui-Badge__icon">{iconLead}</span>}
+      <span className="figui-Badge__text">{children}</span>
     </span>
   );
 };

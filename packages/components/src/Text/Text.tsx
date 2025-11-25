@@ -6,7 +6,6 @@
 
 import React from 'react';
 import type { TextProps } from './Text.types';
-import styles from './Text.module.css';
 
 export const Text: React.FC<TextProps> = ({
   variant = 'body',
@@ -19,13 +18,13 @@ export const Text: React.FC<TextProps> = ({
   ...restProps
 }) => {
   const classNames = [
-    styles.text,
-    styles[`text--${variant}`],
+    'figui-Text',
+    `figui-Text--${variant}`,
     // Size only applies to heading and body variants, not display
-    variant !== 'display' && styles[`text--size-${size}`],
+    variant !== 'display' && `figui-Text--size-${size}`,
     // Strong only applies to body variant
-    strong && variant === 'body' && styles['text--strong'],
-    styles[`text--color-${color}`],
+    strong && variant === 'body' && 'figui-Text--strong',
+    `figui-Text--color-${color}`,
     className,
   ]
     .filter(Boolean)

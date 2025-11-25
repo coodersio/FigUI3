@@ -74,10 +74,10 @@
   background-color: var(--color-bg-brand-secondary);
 }
 
-.button--primary:focus-visible {
+/* .button--primary:focus-visible {
   outline: 2px solid var(--color-border-selected);
   outline-offset: 2px;
-}
+} */
 
 /* Secondary Variant */
 .button--secondary {
@@ -94,10 +94,10 @@
   background-color: var(--color-bg-pressed);
 }
 
-.button--secondary:focus-visible {
+/* .button--secondary:focus-visible {
   outline: 2px solid var(--color-border-selected);
   outline-offset: 2px;
-}
+} */
 
 /* Ghost Variant */
 .button--ghost {
@@ -113,10 +113,10 @@
   background-color: var(--color-bg-transparent-secondary-pressed);
 }
 
-.button--ghost:focus-visible {
+/* .button--ghost:focus-visible {
   outline: 2px solid var(--color-border-selected);
   outline-offset: 2px;
-}
+} */
 
 /* Destructive Variant */
 .button--destructive {
@@ -132,10 +132,10 @@
   background-color: var(--color-bg-danger-secondary);
 }
 
-.button--destructive:focus-visible {
+/* .button--destructive:focus-visible {
   outline: 2px solid var(--color-border-selected);
   outline-offset: 2px;
-}
+} */
 
 /* Secondary Destructive Variant */
 .button--secondary-destructive {
@@ -152,10 +152,10 @@
   background-color: var(--color-bg-pressed);
 }
 
-.button--secondary-destructive:focus-visible {
+/* .button--secondary-destructive:focus-visible {
   outline: 2px solid var(--color-border-selected);
   outline-offset: 2px;
-}
+} */
 
 /* FigJam Variant */
 .button--figjam {
@@ -171,10 +171,10 @@
   background-color: var(--ramp-purple-700);
 }
 
-.button--figjam:focus-visible {
+/* .button--figjam:focus-visible {
   outline: 2px solid var(--color-border-selected);
   outline-offset: 2px;
-}
+} */
 
 /* Success Variant */
 .button--success {
@@ -190,10 +190,10 @@
   background-color: var(--color-bg-success-secondary);
 }
 
-.button--success:focus-visible {
+/* .button--success:focus-visible {
   outline: 2px solid var(--color-border-selected);
   outline-offset: 2px;
-}
+} */
 
 /* Inverse Variant */
 .button--inverse {
@@ -209,10 +209,10 @@
   background-color: var(--ramp-grey-800);
 }
 
-.button--inverse:focus-visible {
+/* .button--inverse:focus-visible {
   outline: 2px solid var(--color-border-selected);
   outline-offset: 2px;
-}
+} */
 
 /* Link Variant */
 .button--link {
@@ -232,11 +232,11 @@
   color: var(--color-bg-brand-secondary);
 }
 
-.button--link:focus-visible {
+/* .button--link:focus-visible {
   outline: 2px solid var(--color-border-selected);
   outline-offset: 2px;
   border-radius: var(--radius-small);
-}
+} */
 
 /* Link Danger Variant */
 .button--link-danger {
@@ -256,11 +256,11 @@
   color: var(--color-bg-danger-secondary);
 }
 
-.button--link-danger:focus-visible {
+/* .button--link-danger:focus-visible {
   outline: 2px solid var(--color-border-selected);
   outline-offset: 2px;
   border-radius: var(--radius-small);
-}
+} */
 
 /* Disabled State */
 .button--disabled {

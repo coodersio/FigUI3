@@ -16,7 +16,7 @@ export type {
 
 // Badge
 export { Badge } from './Badge';
-export type { BadgeProps, BadgeVariant, BadgeSize } from './Badge';
+export type { BadgeProps, BadgeVariant } from './Badge';
 
 // Button
 export { Button } from './Button';
