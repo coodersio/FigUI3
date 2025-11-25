@@ -1421,3 +1421,370 @@ html {
 .figui-Checkbox__wrapper[data-disabled] {
   pointer-events: none;
 }
+
+/* ============================================================================
+ * Input Component Styles
+ * ============================================================================ */
+
+.figui-Input {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 24px;
+  padding: 4px 8px;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-medium);
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.055px;
+  line-height: 16px;
+  color: var(--color-text);
+  /* Figma-kit outline pattern */
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -1px;
+  outline-color: transparent;
+  cursor: text;
+}
+
+.figui-Input:hover:not(:disabled):not(:focus) {
+  outline-color: var(--color-border);
+}
+
+.figui-Input:focus {
+  outline-color: var(--color-border-selected);
+}
+
+.figui-Input:disabled {
+  background-color: var(--color-bg-default);
+  outline-color: var(--color-border);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.figui-Input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+/* Input Size Variants */
+.figui-Input--small {
+  height: 20px;
+  padding: 2px 6px;
+}
+
+.figui-Input--large {
+  height: 32px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+/* Input with icons */
+.figui-InputWrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.figui-InputWrapper .figui-Input {
+  flex: 1;
+}
+
+.figui-InputWrapper--default {
+  height: 24px;
+}
+
+.figui-InputWrapper--large {
+  height: 32px;
+}
+
+.figui-Input__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-icon-secondary);
+  pointer-events: none;
+  position: absolute;
+}
+
+.figui-Input__icon--leading {
+  left: 0;
+}
+
+.figui-Input__icon--trailing {
+  right: 0;
+}
+
+.figui-Input--has-leading {
+  padding-left: 24px;
+}
+
+.figui-Input--has-trailing {
+  padding-right: 24px;
+}
+
+/* ============================================================================
+ * NumericInput Component Styles
+ * ============================================================================ */
+
+.figui-NumericInput {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  width: 88px;
+  padding: 0 1px;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-medium);
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.055px;
+  line-height: 16px;
+  /* Figma-kit outline pattern */
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -1px;
+  outline-color: transparent;
+  cursor: text;
+}
+
+.figui-NumericInput:hover:not([data-disabled]):not(.figui-NumericInput--focused) {
+  outline-color: var(--color-border);
+}
+
+.figui-NumericInput--focused {
+  outline-color: var(--color-border-selected);
+}
+
+.figui-NumericInput[data-disabled] {
+  background-color: var(--color-bg-default);
+  outline-color: var(--color-border);
+  cursor: not-allowed;
+}
+
+.figui-NumericInput[data-disabled] .figui-NumericInput__input {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.figui-NumericInput[data-disabled] .figui-NumericInput__label {
+  color: var(--color-text-disabled);
+}
+
+/* NumericInput Size Variants */
+.figui-NumericInput--small {
+  height: 20px;
+  width: 72px;
+}
+
+.figui-NumericInput--large {
+  height: 32px;
+  width: 100px;
+}
+
+/* NumericInput Inner Input */
+.figui-NumericInput__input {
+  all: unset;
+  box-sizing: border-box;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 7px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  color: var(--color-text);
+  text-align: left;
+  cursor: inherit;
+}
+
+.figui-NumericInput__input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+/* NumericInput Label (leading icon/text) */
+.figui-NumericInput__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-secondary);
+}
+
+.figui-NumericInput--has-leading .figui-NumericInput__input {
+  padding-left: 0;
+}
+
+/* NumericInput Suffix */
+.figui-NumericInput__suffix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 24px;
+  padding-right: 4px;
+  color: var(--color-text-secondary);
+  font-size: 11px;
+}
+
+/* ============================================================================
+ * ValueField Component Styles
+ * ============================================================================ */
+
+.figui-ValueFieldRoot {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-medium);
+  padding: 0 1px;
+  background-color: var(--color-bg-secondary);
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.055px;
+  line-height: 16px;
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -1px;
+  outline-color: transparent;
+  height: 24px;
+}
+
+.figui-ValueFieldRoot:hover:not([data-disabled]) {
+  outline-color: var(--color-border);
+}
+
+.figui-ValueFieldRoot:focus-within {
+  outline-color: var(--color-border-selected);
+}
+
+.figui-ValueFieldRoot[data-disabled] {
+  background-color: var(--color-bg-default);
+  outline-color: var(--color-border);
+  color: var(--color-text-disabled);
+}
+
+.figui-ValueFieldRoot .figui-ValueFieldNumeric {
+  cursor: default;
+  outline: 0;
+}
+
+.figui-ValueFieldLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+  height: 24px;
+  width: 24px;
+}
+
+/* Suffix label (last child) */
+.figui-ValueFieldLabel:last-child {
+  width: 20px;
+}
+
+.figui-ValueFieldLabel + .figui-ValueFieldNumeric {
+  padding-left: 0;
+}
+
+.figui-ValueFieldLabel[data-disabled] {
+  color: var(--color-text-disabled);
+}
+
+.figui-ValueFieldMulti {
+  display: flex;
+  border-radius: var(--radius-medium);
+  outline-offset: -1px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  height: 24px;
+  background-color: var(--color-bg-secondary);
+}
+
+.figui-ValueFieldMulti:hover:not([data-disabled]) {
+  border: 1px solid var(--color-border);
+}
+
+.figui-ValueFieldMulti:focus-within {
+  outline: 1px solid var(--color-border-selected);
+}
+
+.figui-ValueFieldMulti[data-disabled] {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-default);
+}
+
+.figui-ValueFieldMulti .figui-ValueFieldRoot {
+  height: 24px;
+  flex-grow: 1;
+  outline: 0;
+  border-radius: 0;
+  background-color: transparent;
+  margin-top: -1px;
+}
+
+.figui-ValueFieldMulti .figui-ValueFieldRoot:not(:first-child) {
+  border-left: 1px solid var(--color-bg-default);
+}
+
+.figui-ValueFieldMulti .figui-ValueFieldRoot:first-child {
+  border-top-left-radius: var(--radius-medium);
+  border-bottom-left-radius: var(--radius-medium);
+}
+
+.figui-ValueFieldMulti .figui-ValueFieldRoot:last-child {
+  border-top-right-radius: var(--radius-medium);
+  border-bottom-right-radius: var(--radius-medium);
+}
+
+.figui-ValueFieldMulti .figui-ValueFieldNumeric {
+  background-color: transparent;
+  padding-left: 7px;
+}
+
+/* ValueField Numeric Input */
+.figui-ValueFieldNumeric {
+  all: unset;
+  box-sizing: border-box;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 7px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  color: var(--color-text);
+  text-align: left;
+  cursor: text;
+}
+
+.figui-ValueFieldNumeric::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.figui-ValueFieldNumeric:disabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.figui-ValueFieldNumeric--small {
+  font-size: 10px;
+}
+
+.figui-ValueFieldNumeric--large {
+  font-size: 12px;
+}
