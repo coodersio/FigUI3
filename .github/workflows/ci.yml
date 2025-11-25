@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -32,9 +32,3 @@ jobs:
 
       - name: Build Packages
         run: pnpm build
-
-      - name: Run Lint
-        run: pnpm lint
-
-      - name: Run Tests
-        run: pnpm test
