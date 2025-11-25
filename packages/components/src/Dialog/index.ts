@@ -1,0 +1,31 @@
+export {
+  Root,
+  Trigger,
+  Portal,
+  Overlay,
+  Content,
+  Header,
+  Title,
+  Description,
+  Body,
+  Footer,
+  Close,
+  CloseButton,
+} from './Dialog';
+
+export type {
+  RootProps,
+  TriggerProps,
+  PortalProps,
+  OverlayProps,
+  ContentProps,
+  HeaderProps,
+  TitleProps,
+  DescriptionProps,
+  BodyProps,
+  FooterProps,
+  CloseProps,
+  CloseButtonProps,
+  DialogPlacement,
+  DialogSize,
+} from './Dialog';

@@ -108,3 +108,22 @@ export type {
 // Tooltip
 export { TooltipProvider, Tooltip, Hotkey } from './Tooltip';
 export type { TooltipProviderProps, TooltipProps, HotkeyProps } from './Tooltip';
+
+// Dialog
+export * as Dialog from './Dialog';
+export type {
+  RootProps as DialogRootProps,
+  TriggerProps as DialogTriggerProps,
+  PortalProps as DialogPortalProps,
+  OverlayProps as DialogOverlayProps,
+  ContentProps as DialogContentProps,
+  HeaderProps as DialogHeaderProps,
+  TitleProps as DialogTitleProps,
+  DescriptionProps as DialogDescriptionProps,
+  BodyProps as DialogBodyProps,
+  FooterProps as DialogFooterProps,
+  CloseProps as DialogCloseProps,
+  CloseButtonProps as DialogCloseButtonProps,
+  DialogPlacement,
+  DialogSize,
+} from './Dialog';
