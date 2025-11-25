@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 12px;
+      padding: 16px;
+      color: #000;
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      line-height: 1.5;
+      color: #666;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    button {
+      padding: 8px 16px;
+      background: #0d99ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #007be5;
+    }
+
+    button.secondary {
+      background: #f5f5f5;
+      color: #000;
+    }
+
+    button.secondary:hover {
+      background: #e6e6e6;
+    }
+
+    #status {
+      padding: 12px;
+      background: #f5f5f5;
+      border-radius: 6px;
+      margin-top: 16px;
+      min-height: 100px;
+      max-height: 200px;
+      overflow-y: auto;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 11px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    #status.success {
+      background: #cff7d3;
+      color: #036838;
+    }
+
+    #status.error {
+      background: #ffe2e0;
+      color: #9f1f18;
+    }
+
+    .progress {
+      margin-top: 8px;
+      height: 4px;
+      background: #e6e6e6;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: #0d99ff;
+      transition: width 0.3s;
+      width: 0%;
+    }
+
+    .download-section {
+      display: none;
+      margin-top: 16px;
+    }
+
+    .download-section.show {
+      display: block;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 8px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 11px;
+      border: 1px solid #e6e6e6;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    .copy-button {
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Icon SVG Exporter</h2>
+  <p>Export SVG path data from Figma icons for the FigUI3 design system.</p>
+
+  <div class="button-group">
+    <button id="export-selected">Export Selected Icons</button>
+    <button id="export-all">Export All Icons on Page</button>
+    <button id="cancel" class="secondary">Close</button>
+  </div>
+
+  <div id="status">Ready to export...</div>
+  <div class="progress">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
+  <div class="download-section" id="download-section">
+    <h2>Exported Data (JSON)</h2>
+    <textarea id="output" readonly></textarea>
+    <button id="copy" class="copy-button">Copy to Clipboard</button>
+  </div>
+
+  <script>
+    let exportedData = null;
+
+    document.getElementById('export-selected').onclick = () => {
+      parent.postMessage({ pluginMessage: { type: 'export-selected' } }, '*');
+    };
+
+    document.getElementById('export-all').onclick = () => {
+      parent.postMessage({ pluginMessage: { type: 'export-all' } }, '*');
+    };
+
+    document.getElementById('cancel').onclick = () => {
+      parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*');
+    };
+
+    document.getElementById('copy').onclick = () => {
+      const output = document.getElementById('output');
+      output.select();
+      document.execCommand('copy');
+
+      const button = document.getElementById('copy');
+      const originalText = button.textContent;
+      button.textContent = 'Copied!';
+      setTimeout(() => {
+        button.textContent = originalText;
+      }, 2000);
+    };
+
+    window.onmessage = (event) => {
+      const msg = event.data.pluginMessage;
+      const status = document.getElementById('status');
+      const progressBar = document.getElementById('progress-bar');
+      const downloadSection = document.getElementById('download-section');
+      const output = document.getElementById('output');
+
+      if (msg.type === 'progress') {
+        status.textContent = msg.message;
+        status.className = '';
+        const percent = (msg.current / msg.total) * 100;
+        progressBar.style.width = percent + '%';
+        downloadSection.classList.remove('show');
+      } else if (msg.type === 'complete') {
+        status.textContent = msg.message + '\n\nData copied to output below.';
+        status.className = 'success';
+        progressBar.style.width = '100%';
+
+        exportedData = msg.icons;
+        output.value = JSON.stringify(msg.icons, null, 2);
+        downloadSection.classList.add('show');
+      } else if (msg.type === 'error') {
+        status.textContent = 'Error: ' + msg.message;
+        status.className = 'error';
+        progressBar.style.width = '0%';
+        downloadSection.classList.remove('show');
+      }
+    };
+  </script>
+</body>
+</html>

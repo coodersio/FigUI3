@@ -1,0 +1,25 @@
+/**
+ * AlPaddingAll Icon (24px)
+ *
+ * @example
+ * ```tsx
+ * import { AlPaddingAll } from '@figui3/icons/24';
+ *
+ * <AlPaddingAll />
+ * ```
+ */
+
+import { createIcon } from '../createIcon';
+
+export const AlPaddingAll = createIcon({
+  path: (
+    <>
+    <path
+      d="M16 8V16H8V8H16ZM16 7C16.5523 7 17 7.44771 17 8V16C17 16.5523 16.5523 17 16 17H8C7.44772 17 7 16.5523 7 16V8C7 7.44771 7.44771 7 8 7H16ZM13 11V13H11V11H13ZM13 10C13.5523 10 14 10.4477 14 11V13C14 13.5523 13.5523 14 13 14H11C10.4477 14 10 13.5523 10 13V11C10 10.4477 10.4477 10 11 10H13Z"
+      fill="black"
+    />
+    </>
+  ),
+  displayName: 'AlPaddingAll',
+  defaultSize: 24,
+});

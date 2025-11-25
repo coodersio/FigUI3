@@ -1,0 +1,25 @@
+/**
+ * AlPaddingLeft Icon (24px)
+ *
+ * @example
+ * ```tsx
+ * import { AlPaddingLeft } from '@figui3/icons/24';
+ *
+ * <AlPaddingLeft />
+ * ```
+ */
+
+import { createIcon } from '../createIcon';
+
+export const AlPaddingLeft = createIcon({
+  path: (
+    <>
+    <path
+      d="M8 7.5C8 7.22386 7.77614 7 7.5 7C7.22386 7 7 7.22386 7 7.5V16.5C7 16.7761 7.22386 17 7.5 17C7.77614 17 8 16.7761 8 16.5V7.5ZM13 11V13H11V11H13ZM13 10C13.5523 10 14 10.4477 14 11V13C14 13.5523 13.5523 14 13 14H11C10.4477 14 10 13.5523 10 13V11C10 10.4477 10.4477 10 11 10H13Z"
+      fill="black"
+    />
+    </>
+  ),
+  displayName: 'AlPaddingLeft',
+  defaultSize: 24,
+});

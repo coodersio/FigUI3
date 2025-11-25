@@ -1,0 +1,25 @@
+/**
+ * Save Icon (24px)
+ *
+ * @example
+ * ```tsx
+ * import { Save } from '@figui3/icons/24';
+ *
+ * <Save />
+ * ```
+ */
+
+import { createIcon } from '../createIcon';
+
+export const Save = createIcon({
+  path: (
+    <>
+    <path
+      d="M12 16.0858L12.7071 16.7929L16 20.0858V5C16 4.44772 15.5523 4 15 4H9C8.44772 4 8 4.44772 8 5L8 20.0858L11.2929 16.7929L12 16.0858ZM12.7071 18.2071L15.2929 20.7929C15.9229 21.4229 17 20.9767 17 20.0858V5C17 3.89543 16.1046 3 15 3H9C7.89543 3 7 3.89543 7 5V20.0858C7 20.9767 8.07714 21.4229 8.70711 20.7929L11.2929 18.2071L12 17.5L12.7071 18.2071Z"
+      fill="black"
+    />
+    </>
+  ),
+  displayName: 'Save',
+  defaultSize: 24,
+});

@@ -342,15 +342,15 @@ import { ${icon24Names.slice(0, 3).join(', ')} } from '@figui3/icons/24';
             <div style={{ display: 'flex', gap: '12px', marginBottom: '12px', alignItems: 'center' }}>
               <Icons16.Check color="var(--color-icon-success)" />
               <Icons16.Close color="var(--color-icon-danger)" />
-              <Icons16.Search color="var(--color-icon-brand)" />
-              <Icons16.Settings color="var(--color-icon-tertiary)" />
+              <Icons16.Info color="var(--color-icon-brand)" />
+              <Icons16.Adjust color="var(--color-icon-tertiary)" />
             </div>
-            <CodeBlock code={`import { Check, Close, Search, Settings } from '@figui3/icons/16';
+            <CodeBlock code={`import { Check, Close, Info, Adjust } from '@figui3/icons/16';
 
 <Check color="var(--color-icon-success)" />
 <Close color="var(--color-icon-danger)" />
-<Search color="var(--color-icon-brand)" />
-<Settings color="var(--color-icon-tertiary)" />`} />
+<Info color="var(--color-icon-brand)" />
+<Adjust color="var(--color-icon-tertiary)" />`} />
           </div>
 
           {/* In Buttons */}
@@ -392,11 +392,11 @@ import { ${icon24Names.slice(0, 3).join(', ')} } from '@figui3/icons/24';
                 fontWeight: 500,
                 cursor: 'pointer',
               }}>
-                <Icons16.Search size={16} />
-                Search
+                <Icons16.Help size={16} />
+                Help
               </button>
             </div>
-            <CodeBlock code={`import { Plus, Search } from '@figui3/icons/16';
+            <CodeBlock code={`import { Plus, Help } from '@figui3/icons/16';
 
 <button>
   <Plus size={16} />
@@ -404,8 +404,8 @@ import { ${icon24Names.slice(0, 3).join(', ')} } from '@figui3/icons/24';
 </button>
 
 <button>
-  <Search size={16} />
-  Search
+  <Help size={16} />
+  Help
 </button>`} />
           </div>
         </div>

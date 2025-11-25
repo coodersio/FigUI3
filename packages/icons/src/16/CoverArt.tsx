@@ -1,0 +1,25 @@
+/**
+ * CoverArt Icon (16px)
+ *
+ * @example
+ * ```tsx
+ * import { CoverArt } from '@figui3/icons/16';
+ *
+ * <CoverArt />
+ * ```
+ */
+
+import { createIcon } from '../createIcon';
+
+export const CoverArt = createIcon({
+  path: (
+    <>
+    <path
+      d="M4.5 4H11.5C11.7761 4 12 4.22386 12 4.5V9H4V4.5C4 4.22386 4.22386 4 4.5 4ZM4 10V11.5C4 11.7761 4.22386 12 4.5 12H11.5C11.7761 12 12 11.7761 12 11.5V10H4ZM3 4.5C3 3.67157 3.67157 3 4.5 3H11.5C12.3284 3 13 3.67157 13 4.5V11.5C13 12.3284 12.3284 13 11.5 13H4.5C3.67157 13 3 12.3284 3 11.5V4.5Z"
+      fill="black"
+    />
+    </>
+  ),
+  displayName: 'CoverArt',
+  defaultSize: 16,
+});

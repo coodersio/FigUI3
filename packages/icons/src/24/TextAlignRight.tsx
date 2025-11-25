@@ -1,0 +1,25 @@
+/**
+ * TextAlignRight Icon (24px)
+ *
+ * @example
+ * ```tsx
+ * import { TextAlignRight } from '@figui3/icons/24';
+ *
+ * <TextAlignRight />
+ * ```
+ */
+
+import { createIcon } from '../createIcon';
+
+export const TextAlignRight = createIcon({
+  path: (
+    <>
+    <path
+      d="M19 7.5C19 7.22386 18.7761 7 18.5 7H5.5C5.22386 7 5 7.22386 5 7.5C5 7.77614 5.22386 8 5.5 8H18.5C18.7761 8 19 7.77614 19 7.5ZM19 11.5C19 11.2239 18.7761 11 18.5 11H11.5C11.2239 11 11 11.2239 11 11.5C11 11.7761 11.2239 12 11.5 12H18.5C18.7761 12 19 11.7761 19 11.5ZM18.5 15C18.7761 15 19 15.2239 19 15.5C19 15.7761 18.7761 16 18.5 16H9.5C9.22386 16 9 15.7761 9 15.5C9 15.2239 9.22386 15 9.5 15H18.5Z"
+      fill="black"
+    />
+    </>
+  ),
+  displayName: 'TextAlignRight',
+  defaultSize: 24,
+});

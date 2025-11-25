@@ -1,0 +1,29 @@
+/**
+ * DropShadowRightSmall Icon (24px)
+ *
+ * @example
+ * ```tsx
+ * import { DropShadowRightSmall } from '@figui3/icons/24';
+ *
+ * <DropShadowRightSmall />
+ * ```
+ */
+
+import { createIcon } from '../createIcon';
+
+export const DropShadowRightSmall = createIcon({
+  path: (
+    <>
+    <path
+      d="M17 6H7C6.44772 6 6 6.44772 6 7V17C6 17.5523 6.44772 18 7 18H17C17.5523 18 18 17.5523 18 17V7C18 6.44772 17.5523 6 17 6ZM7 5C5.89543 5 5 5.89543 5 7V17C5 18.1046 5.89543 19 7 19H17C18.1046 19 19 18.1046 19 17V7C19 5.89543 18.1046 5 17 5H7Z"
+      fill="black"
+    />
+    <path
+      d="M17 19H20C21.1046 19 22 18.1046 22 17V7C22 5.89543 21.1046 5 20 5H17C18.1046 5 19 5.89543 19 7V17C19 18.1046 18.1046 19 17 19Z"
+      fill="black"
+    />
+    </>
+  ),
+  displayName: 'DropShadowRightSmall',
+  defaultSize: 24,
+});

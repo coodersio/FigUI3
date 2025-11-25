@@ -13,13 +13,12 @@ import { createIcon } from '../createIcon';
 
 export const ChevronRight = createIcon({
   path: (
+    <>
     <path
-      d="M9 6L15 12L9 18"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M11.1464 9.64645C11.3417 9.45118 11.6583 9.45118 11.8536 9.64645L13.8536 11.6464C14.0488 11.8417 14.0488 12.1583 13.8536 12.3536L11.8536 14.3536C11.6583 14.5488 11.3417 14.5488 11.1464 14.3536C10.9512 14.1583 10.9512 13.8417 11.1464 13.6464L12.7929 12L11.1464 10.3536C10.9512 10.1583 10.9512 9.84171 11.1464 9.64645Z"
+      fill="black"
     />
+    </>
   ),
   displayName: 'ChevronRight',
   defaultSize: 24,
