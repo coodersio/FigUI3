@@ -95,3 +95,12 @@ export type { SliderProps } from './Slider';
 // Switch
 export { Switch } from './Switch';
 export type { SwitchProps } from './Switch';
+
+// Tabs
+export * as Tabs from './Tabs';
+export type {
+  RootProps as TabsRootProps,
+  ListProps as TabsListProps,
+  TriggerProps as TabsTriggerProps,
+  ContentProps as TabsContentProps,
+} from './Tabs';

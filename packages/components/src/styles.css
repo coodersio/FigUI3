@@ -2198,3 +2198,109 @@ html {
 .figui-SwitchDescription-disabled {
   color: var(--color-text-disabled);
 }
+
+/* ============================================================================
+   Tabs Component
+   ============================================================================
+   Figma UI3 Tabs specification:
+   - Tab height: 24px
+   - Tab padding: 0 8px
+   - Gap between tabs: 4px
+   - Border radius: 5px (radius-medium)
+   - Active tab: bg-secondary, font-weight 550 (semi-bold)
+   - Inactive tab: transparent bg, font-weight 450 (medium), text-secondary
+   - Font size: 11px
+   - Line height: 16px
+   ============================================================================ */
+
+/* Root container */
+.figui-TabsRoot {
+  display: flex;
+  flex-direction: column;
+}
+
+/* List container for tab triggers */
+.figui-TabsList {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.figui-TabsList::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tab trigger button */
+.figui-TabsTrigger {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 24px;
+  padding: 0 8px;
+  gap: 4px;
+
+  /* Typography - Figma UI3 body/medium */
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 16px;
+  letter-spacing: 0.055px;
+  white-space: nowrap;
+
+  /* Default (inactive) state */
+  color: var(--color-text-secondary);
+  background: transparent;
+  border-radius: var(--radius-medium);
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background-color 0.1s ease,
+    color 0.1s ease;
+}
+
+/* Inactive state hover */
+.figui-TabsTrigger[data-state='inactive']:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text);
+}
+
+/* Active state */
+.figui-TabsTrigger[data-state='active'] {
+  font-weight: 550;
+  color: var(--color-text);
+  background: var(--color-bg-secondary);
+}
+
+/* Focus state */
+.figui-TabsTrigger:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 1px var(--color-border-selected),
+    inset 0 0 0 1px var(--color-border-selected);
+}
+
+/* Disabled state */
+.figui-TabsTrigger:disabled,
+.figui-TabsTrigger[data-disabled] {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Tab content panel */
+.figui-TabsContent {
+  flex: 1;
+  outline: none;
+}
+
+.figui-TabsContent:focus-visible {
+  outline: none;
+}
