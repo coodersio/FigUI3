@@ -1788,3 +1788,71 @@ html {
 .figui-ValueFieldNumeric--large {
   font-size: 12px;
 }
+
+/* ============================================================================
+ * RadioGroup Component Styles
+ * ============================================================================ */
+
+.figui-RadioGroupRoot {
+  display: flex;
+}
+
+.figui-RadioGroupRoot[data-orientation='horizontal'] {
+  gap: 20px;
+}
+
+.figui-RadioGroupRoot[data-orientation='vertical'] {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.figui-RadioGroupItem {
+  all: unset;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  background-color: var(--color-bg-default);
+  border: 4px solid transparent;
+  border-radius: var(--radius-full);
+  outline-offset: -1px;
+  outline: 1px solid var(--color-icon);
+  cursor: pointer;
+}
+
+.figui-RadioGroupItem:focus-visible {
+  outline-color: var(--color-border-selected);
+}
+
+.figui-RadioGroupItem[data-state='checked'] {
+  background-color: var(--color-icon);
+  border-color: var(--color-bg-default);
+}
+
+.figui-RadioGroupItem[data-disabled] {
+  outline-color: var(--color-icon-disabled);
+  cursor: not-allowed;
+}
+
+.figui-RadioGroupItem[data-disabled][data-state='checked'] {
+  background-color: var(--color-icon-disabled);
+}
+
+.figui-RadioGroupLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 16px;
+  letter-spacing: 0.055px;
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.figui-RadioGroupLabel[data-disabled] {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}

@@ -72,3 +72,11 @@ export type {
   LabelProps as ValueFieldLabelProps,
   NumericProps as ValueFieldNumericProps,
 } from './ValueField';
+
+// RadioGroup
+export * as RadioGroup from './RadioGroup';
+export type {
+  RootProps as RadioGroupRootProps,
+  ItemProps as RadioGroupItemProps,
+  LabelProps as RadioGroupLabelProps,
+} from './RadioGroup';
