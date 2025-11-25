@@ -1,0 +1,53 @@
+{
+  "name": "@figui3/icons",
+  "version": "0.0.0",
+  "description": "Icon components for FigUI3 Design System",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./16": {
+      "import": "./dist/16/index.js",
+      "require": "./dist/16/index.cjs",
+      "types": "./dist/16/index.d.ts"
+    },
+    "./24": {
+      "import": "./dist/24/index.js",
+      "require": "./dist/24/index.cjs",
+      "types": "./dist/24/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "clean": "rm -rf dist",
+    "lint": "eslint src --ext ts,tsx",
+    "test": "vitest"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "keywords": [
+    "icons",
+    "figui3",
+    "figma",
+    "react"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "@figui3/tokens",
+  "version": "0.0.0",
+  "description": "Design tokens for FigUI3 Design System",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./colors": {
+      "import": "./dist/colors/index.js",
+      "require": "./dist/colors/index.cjs",
+      "types": "./dist/colors/index.d.ts"
+    },
+    "./typography": {
+      "import": "./dist/typography.js",
+      "require": "./dist/typography.cjs",
+      "types": "./dist/typography.d.ts"
+    },
+    "./spacing": {
+      "import": "./dist/spacing.js",
+      "require": "./dist/spacing.cjs",
+      "types": "./dist/spacing.d.ts"
+    },
+    "./elevation": {
+      "import": "./dist/elevation.js",
+      "require": "./dist/elevation.cjs",
+      "types": "./dist/elevation.d.ts"
+    },
+    "./radius": {
+      "import": "./dist/radius.js",
+      "require": "./dist/radius.cjs",
+      "types": "./dist/radius.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "clean": "rm -rf dist",
+    "lint": "eslint src --ext ts,tsx",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.0"
+  },
+  "keywords": [
+    "design-tokens",
+    "figui3",
+    "figma"
+  ]
+}

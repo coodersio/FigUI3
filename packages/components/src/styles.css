@@ -1,0 +1,329 @@
+/**
+ * FigUI3 Components Global Styles
+ *
+ * Design tokens CSS variables and base styles
+ */
+
+/* Design System Tokens - Light Theme (Default) */
+:root {
+  /* Typography */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-small: 11px;
+  --font-size-base: 12px;
+  --font-size-medium: 14px;
+  --font-size-large: 16px;
+  --font-size-xlarge: 20px;
+
+  /* Spacing (8px grid) */
+  --spacing-0: 0;
+  --spacing-0-5: 4px;
+  --spacing-1: 8px;
+  --spacing-1-5: 12px;
+  --spacing-2: 16px;
+  --spacing-2-5: 20px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-8: 64px;
+  --spacing-10: 80px;
+  --spacing-12: 96px;
+  --spacing-16: 128px;
+  --spacing-20: 160px;
+  --spacing-24: 192px;
+
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-small: 2px;
+  --radius-medium: 5px;
+  --radius-large: 8px;
+  --radius-xlarge: 12px;
+  --radius-full: 9999px;
+
+  /* Elevation (Shadows) - Light Mode */
+  --elevation-100: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --elevation-200: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --elevation-300: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --elevation-400: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --elevation-500: 0 16px 32px rgba(0, 0, 0, 0.18);
+
+  /* Color Ramps */
+  --ramp-grey-50: #f5f5f5;
+  --ramp-grey-100: #e6e6e6;
+  --ramp-grey-200: #d9d9d9;
+  --ramp-grey-300: #c4c4c4;
+  --ramp-grey-400: #9e9e9e;
+  --ramp-grey-500: #757575;
+  --ramp-grey-600: #616161;
+  --ramp-grey-700: #444444;
+  --ramp-grey-800: #2c2c2c;
+  --ramp-grey-900: #1e1e1e;
+
+  --ramp-blue-100: #e5f4ff;
+  --ramp-blue-200: #b3dcff;
+  --ramp-blue-300: #80caff;
+  --ramp-blue-400: #4db8ff;
+  --ramp-blue-500: #0d99ff;
+  --ramp-blue-600: #007be5;
+  --ramp-blue-700: #0768cf;
+  --ramp-blue-800: #0056b3;
+  --ramp-blue-900: #034ac1;
+
+  --ramp-purple-100: #f1e5ff;
+  --ramp-purple-200: #d9b8ff;
+  --ramp-purple-300: #c18aff;
+  --ramp-purple-400: #a85cff;
+  --ramp-purple-500: #9747ff;
+  --ramp-purple-600: #8638e5;
+  --ramp-purple-700: #7c2bda;
+  --ramp-purple-800: #681abb;
+  --ramp-purple-900: #5d0eb4;
+
+  --ramp-red-100: #ffe2e0;
+  --ramp-red-200: #ffb3ae;
+  --ramp-red-300: #ff8a82;
+  --ramp-red-400: #ff6157;
+  --ramp-red-500: #f24822;
+  --ramp-red-600: #dc3412;
+  --ramp-red-700: #bd2915;
+  --ramp-red-800: #9f1f18;
+  --ramp-red-900: #871614;
+
+  --ramp-yellow-100: #fff1c2;
+  --ramp-yellow-200: #ffe180;
+  --ramp-yellow-300: #ffd966;
+  --ramp-yellow-400: #ffce3d;
+  --ramp-yellow-500: #ffcd29;
+  --ramp-yellow-600: #ffc21a;
+  --ramp-yellow-700: #fab815;
+  --ramp-yellow-800: #eba611;
+  --ramp-yellow-900: #d49210;
+
+  --ramp-green-100: #cff7d3;
+  --ramp-green-200: #9de9a6;
+  --ramp-green-300: #85e0a3;
+  --ramp-green-400: #5dd98c;
+  --ramp-green-500: #14ae5c;
+  --ramp-green-600: #009951;
+  --ramp-green-700: #008043;
+  --ramp-green-800: #036838;
+  --ramp-green-900: #025a2d;
+
+  --ramp-pink-100: #ffe0fc;
+  --ramp-pink-200: #ffb3f5;
+  --ramp-pink-300: #fc9ce0;
+  --ramp-pink-400: #ff5fd6;
+  --ramp-pink-500: #ff24bd;
+  --ramp-pink-600: #ea10ac;
+  --ramp-pink-700: #cb0b96;
+  --ramp-pink-800: #68275e;
+  --ramp-pink-900: #5a1752;
+
+  /* Semantic Colors - Light Mode */
+  --color-bg-default: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-tertiary: #e6e6e6;
+  --color-bg-hover: #f5f5f5;
+  --color-bg-pressed: #f5f5f5;
+  --color-bg-transparent-secondary-hover: rgba(0, 0, 0, 0.1);
+  --color-bg-transparent-secondary-pressed: rgba(0, 0, 0, 0.15);
+  --color-bg-selected: #e5f4ff;
+  --color-bg-disabled: #d9d9d9;
+  --color-bg-inverse: #2c2c2c;
+  --color-bg-brand: #0d99ff;
+  --color-bg-brand-hover: #007be5;
+  --color-bg-brand-secondary: #0768cf;
+  --color-bg-brand-tertiary: #e5f4ff;
+  --color-bg-danger: #f24822;
+  --color-bg-danger-hover: #dc3412;
+  --color-bg-danger-secondary: #bd2915;
+  --color-bg-danger-tertiary: #ffe2e0;
+  --color-bg-warning: #ffcd29;
+  --color-bg-warning-hover: #ffc21a;
+  --color-bg-warning-secondary: #fab815;
+  --color-bg-warning-tertiary: #fff1c2;
+  --color-bg-success: #14ae5c;
+  --color-bg-success-hover: #009951;
+  --color-bg-success-secondary: #008043;
+  --color-bg-success-tertiary: #cff7d3;
+
+  --color-text: #000000e5;
+  --color-text-secondary: #00000080;
+  --color-text-tertiary: #0000004d;
+  --color-text-disabled: #0000004d;
+  --color-text-brand: #007be5;
+  --color-text-danger: #dc3412;
+  --color-text-warning: #b86200;
+  --color-text-success: #009951;
+  --color-text-onbrand: #ffffff;
+  --color-text-ondanger: #ffffff;
+  --color-text-onwarning: #000000e5;
+  --color-text-onsuccess: #ffffff;
+  --color-text-toolbar: #ffffff;
+
+  --color-border: #e6e6e6;
+  --color-border-translucent: rgba(0, 0, 0, 0.1);
+  --color-border-selected: #0d99ff;
+  --color-border-selected-strong: #007be5;
+  --color-border-danger: #ffc7c2;
+
+  --color-icon: #000000e5;
+  --color-icon-secondary: #00000080;
+  --color-icon-tertiary: #0000004d;
+  --color-icon-disabled: #0000004d;
+  --color-icon-brand: #007be5;
+  --color-icon-danger: #f24822;
+  --color-icon-warning: #ffcd29;
+  --color-icon-success: #14ae5c;
+}
+
+/* Dark Theme */
+.figma-dark {
+  /* Elevation (Shadows) - Dark Mode */
+  --elevation-100: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --elevation-200: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --elevation-300: 0 4px 8px rgba(0, 0, 0, 0.5);
+  --elevation-400: 0 8px 16px rgba(0, 0, 0, 0.6);
+  --elevation-500: 0 16px 32px rgba(0, 0, 0, 0.7);
+
+  /* Semantic Colors - Dark Mode */
+  --color-bg-default: #2c2c2c;
+  --color-bg-secondary: #383838;
+  --color-bg-tertiary: #444444;
+  --color-bg-hover: #383838;
+  --color-bg-pressed: #383838;
+  --color-bg-transparent-secondary-hover: rgba(255, 255, 255, 0.1);
+  --color-bg-transparent-secondary-pressed: rgba(255, 255, 255, 0.15);
+  --color-bg-selected: #0768cf;
+  --color-bg-disabled: #757575;
+  --color-bg-inverse: #ffffff;
+  --color-bg-brand: #0d99ff;
+  --color-bg-brand-hover: #007be5;
+  --color-bg-brand-secondary: #0768cf;
+  --color-bg-brand-tertiary: #034ac1;
+  --color-bg-danger: #f24822;
+  --color-bg-danger-hover: #dc3412;
+  --color-bg-danger-secondary: #bd2915;
+  --color-bg-danger-tertiary: #9f1f18;
+  --color-bg-warning: #ffcd29;
+  --color-bg-warning-hover: #ffc21a;
+  --color-bg-warning-secondary: #fab815;
+  --color-bg-warning-tertiary: #eba611;
+  --color-bg-success: #14ae5c;
+  --color-bg-success-hover: #009951;
+  --color-bg-success-secondary: #008043;
+  --color-bg-success-tertiary: #036838;
+
+  --color-text: #ffffffe5;
+  --color-text-secondary: #ffffff;
+  --color-text-tertiary: #ffffffcc;
+  --color-text-disabled: #ffffffcc;
+  --color-text-brand: #80caff;
+  --color-text-danger: #ffafa3;
+  --color-text-warning: #ffd966;
+  --color-text-success: #85e0a3;
+  --color-text-onbrand: #ffffff;
+  --color-text-ondanger: #ffffff;
+  --color-text-onwarning: #000000e5;
+  --color-text-onsuccess: #ffffff;
+  --color-text-toolbar: #ffffff;
+
+  --color-border: #444444;
+  --color-border-selected: #0d99ff;
+  --color-border-selected-strong: #007be5;
+
+  --color-icon: #ffffffe5;
+  --color-icon-secondary: #ffffffcc;
+  --color-icon-tertiary: #ffffff66;
+  --color-icon-disabled: #ffffffcc;
+  --color-icon-brand: #80caff;
+  --color-icon-danger: #ffafa3;
+  --color-icon-warning: #ffd966;
+  --color-icon-success: #85e0a3;
+}
+
+/* Auto Dark Mode (respects system preference) */
+@media (prefers-color-scheme: dark) {
+  :root:not(.figma-light) {
+    /* Elevation (Shadows) - Dark Mode */
+    --elevation-100: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --elevation-200: 0 2px 4px rgba(0, 0, 0, 0.4);
+    --elevation-300: 0 4px 8px rgba(0, 0, 0, 0.5);
+    --elevation-400: 0 8px 16px rgba(0, 0, 0, 0.6);
+    --elevation-500: 0 16px 32px rgba(0, 0, 0, 0.7);
+
+    /* Semantic Colors - Dark Mode */
+    --color-bg-default: #2c2c2c;
+    --color-bg-secondary: #383838;
+    --color-bg-tertiary: #444444;
+    --color-bg-hover: #383838;
+    --color-bg-selected: #0768cf;
+    --color-bg-disabled: #757575;
+    --color-bg-inverse: #ffffff;
+    --color-bg-brand: #0d99ff;
+    --color-bg-brand-hover: #007be5;
+    --color-bg-brand-secondary: #0768cf;
+    --color-bg-brand-tertiary: #034ac1;
+    --color-bg-danger: #f24822;
+    --color-bg-danger-hover: #dc3412;
+    --color-bg-danger-secondary: #bd2915;
+    --color-bg-danger-tertiary: #9f1f18;
+    --color-bg-warning: #ffcd29;
+    --color-bg-warning-hover: #ffc21a;
+    --color-bg-warning-secondary: #fab815;
+    --color-bg-warning-tertiary: #eba611;
+    --color-bg-success: #14ae5c;
+    --color-bg-success-hover: #009951;
+    --color-bg-success-secondary: #008043;
+    --color-bg-success-tertiary: #036838;
+
+    --color-text: #ffffffe5;
+    --color-text-secondary: #ffffff;
+    --color-text-tertiary: #ffffffcc;
+    --color-text-disabled: #ffffffcc;
+    --color-text-brand: #80caff;
+    --color-text-danger: #ffafa3;
+    --color-text-warning: #ffd966;
+    --color-text-success: #85e0a3;
+    --color-text-onbrand: #ffffff;
+    --color-text-ondanger: #ffffff;
+    --color-text-onwarning: #000000e5;
+    --color-text-onsuccess: #ffffff;
+    --color-text-toolbar: #ffffff;
+
+    --color-border: #444444;
+    --color-border-translucent: rgba(255, 255, 255, 0.1);
+    --color-border-selected: #0d99ff;
+    --color-border-selected-strong: #007be5;
+
+    --color-icon: #ffffffe5;
+    --color-icon-secondary: #ffffffcc;
+    --color-icon-tertiary: #ffffff66;
+    --color-icon-disabled: #ffffffcc;
+    --color-icon-brand: #80caff;
+    --color-icon-danger: #ffafa3;
+    --color-icon-warning: #ffd966;
+    --color-icon-success: #85e0a3;
+  }
+}
+
+/* Base reset for components */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Ensure consistent rendering */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-family-base);
+}

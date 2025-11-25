@@ -1,0 +1,147 @@
+/**
+ * Avatar Component Styles
+ *
+ * Styles for Avatar component using design tokens
+ */
+
+/* Base Avatar Styles */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  user-select: none;
+}
+
+/* Size Variants */
+.avatar--small {
+  width: 16px;
+  height: 16px;
+  font-size: 9px;
+  line-height: 16px;
+}
+
+.avatar--default {
+  width: 24px;
+  height: 24px;
+  font-size: 11px;
+  line-height: 24px;
+}
+
+.avatar--large {
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
+  line-height: 32px;
+}
+
+/* Shape Variants */
+.avatar--circle {
+  border-radius: var(--radius-full);
+}
+
+.avatar--square {
+  border-radius: var(--radius-medium);
+}
+
+/* Image */
+.avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Initials */
+.avatar__initials {
+  text-transform: uppercase;
+  color: white;
+}
+
+/* Overflow indicator */
+.avatar__overflow {
+  color: white;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Color Variants */
+.avatar--purple {
+  background-color: var(--ramp-purple-500);
+  color: white;
+}
+
+.avatar--blue {
+  background-color: var(--ramp-blue-500);
+  color: white;
+}
+
+.avatar--pink {
+  background-color: var(--ramp-pink-500);
+  color: white;
+}
+
+.avatar--red {
+  background-color: var(--ramp-red-500);
+  color: white;
+}
+
+.avatar--yellow {
+  background-color: var(--ramp-yellow-500);
+  color: var(--ramp-grey-900);
+}
+
+.avatar--green {
+  background-color: var(--ramp-green-500);
+  color: white;
+}
+
+.avatar--grey {
+  background-color: var(--ramp-grey-400);
+  color: white;
+}
+
+.avatar--org {
+  background-color: var(--ramp-grey-600);
+  color: white;
+}
+
+/* Overflow Variants */
+.avatar--overflow-unread {
+  background-color: var(--color-bg-brand);
+  color: white;
+}
+
+.avatar--overflow-read {
+  background-color: var(--ramp-grey-400);
+  color: white;
+}
+
+/* State Variants */
+.avatar--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.avatar--dash {
+  border: 2px solid var(--ramp-blue-500);
+}
+
+.avatar--design {
+  border: 2px solid var(--ramp-purple-500);
+}
+
+.avatar--spotlight {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--ramp-blue-500);
+}
+
+.avatar--audio-calling {
+  border: 2px solid var(--ramp-green-500);
+}
+
+/* Photo variant */
+.avatar--photo {
+  background-color: var(--ramp-grey-300);
+}

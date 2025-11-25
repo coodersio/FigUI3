@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "react-jsx"
+  },
+  "include": [".storybook/**/*", "../../packages/components/src/**/*.stories.tsx"],
+  "references": [
+    { "path": "../../packages/tokens" },
+    { "path": "../../packages/icons" },
+    { "path": "../../packages/components" }
+  ]
+}

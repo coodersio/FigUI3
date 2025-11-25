@@ -1,0 +1,160 @@
+/**
+ * Badge Component Styles
+ *
+ * Styles converted from Figma UI3 specs to CSS Modules using design tokens
+ */
+
+/* Base Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+  font-family: var(--font-family-base);
+  transition: all 0.2s ease;
+
+  /* Size - 16px height, 4px horizontal padding */
+  height: 16px;
+  padding: 0 var(--spacing-0-5);
+  border-radius: var(--radius-medium);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  line-height: 16px;
+  gap: var(--spacing-0-5);
+}
+
+/* Icon Styles */
+.badge__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badge__text {
+  display: inline-block;
+}
+
+/* Strong (Filled) Variants */
+.badge--strong.badge--default {
+  background-color: var(--color-bg-inverse);
+  color: var(--color-text-toolbar);
+}
+
+.badge--strong.badge--invert {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.badge--strong.badge--brand {
+  background-color: var(--color-bg-brand);
+  color: var(--color-text-onbrand);
+}
+
+.badge--strong.badge--figjam {
+  background-color: var(--ramp-purple-500);
+  color: white;
+}
+
+.badge--strong.badge--danger {
+  background-color: var(--color-bg-danger);
+  color: var(--color-text-ondanger);
+}
+
+.badge--strong.badge--warning {
+  background-color: var(--color-bg-warning);
+  color: var(--color-text-onwarning);
+}
+
+.badge--strong.badge--success {
+  background-color: var(--color-bg-success);
+  color: var(--color-text-onsuccess);
+}
+
+.badge--strong.badge--component {
+  background-color: var(--ramp-blue-500);
+  color: white;
+}
+
+.badge--strong.badge--assistive {
+  background-color: var(--ramp-grey-600);
+  color: white;
+}
+
+.badge--strong.badge--merged {
+  background-color: var(--ramp-purple-400);
+  color: white;
+}
+
+.badge--strong.badge--archived {
+  background-color: var(--ramp-grey-400);
+  color: white;
+}
+
+/* Light (Outline) Variants */
+.badge--light.badge--default {
+  border: 1px solid var(--color-border);
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.badge--light.badge--invert {
+  border: 1px solid var(--color-border);
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.badge--light.badge--brand {
+  border: 1px solid var(--color-text-brand);
+  background-color: transparent;
+  color: var(--color-text-brand);
+}
+
+.badge--light.badge--figjam {
+  border: 1px solid var(--ramp-purple-500);
+  background-color: transparent;
+  color: var(--ramp-purple-500);
+}
+
+.badge--light.badge--danger {
+  border: 1px solid var(--color-text-danger);
+  background-color: transparent;
+  color: var(--color-text-danger);
+}
+
+.badge--light.badge--warning {
+  border: 1px solid var(--color-text-warning);
+  background-color: transparent;
+  color: var(--color-text-warning);
+}
+
+.badge--light.badge--success {
+  border: 1px solid var(--color-text-success);
+  background-color: transparent;
+  color: var(--color-text-success);
+}
+
+.badge--light.badge--component {
+  border: 1px solid var(--ramp-blue-500);
+  background-color: transparent;
+  color: var(--ramp-blue-500);
+}
+
+.badge--light.badge--assistive {
+  border: 1px solid var(--ramp-grey-600);
+  background-color: transparent;
+  color: var(--ramp-grey-600);
+}
+
+.badge--light.badge--merged {
+  border: 1px solid var(--ramp-purple-400);
+  background-color: transparent;
+  color: var(--ramp-purple-400);
+}
+
+.badge--light.badge--archived {
+  border: 1px solid var(--ramp-grey-400);
+  background-color: transparent;
+  color: var(--ramp-grey-400);
+}

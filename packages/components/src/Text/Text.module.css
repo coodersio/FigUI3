@@ -1,0 +1,136 @@
+/**
+ * Text Component Styles
+ *
+ * Typography styles from Figma UI3 specs using design tokens
+ */
+
+/* Base Text Styles */
+.text {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+}
+
+/* Variant Styles */
+
+/* Display: Whyte Medium 48/56, tracking -1.44px */
+.text--display {
+  font-family: 'Whyte', var(--font-family-heading);
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -1.44px;
+}
+
+/* Heading: Inter Semi Bold */
+.text--heading {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+}
+
+/* Heading Large: 24/32, tracking -0.408px */
+.text--heading.text--size-large {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.408px;
+}
+
+/* Heading Medium: 11/25, tracking -0.055px */
+.text--heading.text--size-medium {
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: -0.055px;
+}
+
+/* Heading Small: 13/22, tracking -0.0325px */
+.text--heading.text--size-small {
+  font-size: 13px;
+  line-height: 22px;
+  letter-spacing: -0.0325px;
+}
+
+/* Body: Inter Regular/Medium */
+.text--body {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-normal);
+}
+
+/* Body Strong */
+.text--body.text--strong {
+  font-weight: var(--font-weight-medium);
+}
+
+/* Body Large: 13/22, tracking -0.0325px */
+.text--body.text--size-large {
+  font-size: 13px;
+  line-height: 22px;
+  letter-spacing: -0.0325px;
+}
+
+/* Body Medium: 11/16, tracking 0.055px */
+.text--body.text--size-medium {
+  font-size: var(--font-size-small);
+  line-height: 16px;
+  letter-spacing: 0.055px;
+}
+
+/* Body Small: 9/14, tracking 0.045px */
+.text--body.text--size-small {
+  font-size: 9px;
+  line-height: 14px;
+  letter-spacing: 0.045px;
+}
+
+/* Color Variants */
+.text--color-default {
+  color: var(--color-text);
+}
+
+.text--color-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text--color-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.text--color-disabled {
+  color: var(--color-text-disabled);
+}
+
+.text--color-brand {
+  color: var(--color-text-brand);
+}
+
+.text--color-danger {
+  color: var(--color-text-danger);
+}
+
+.text--color-warning {
+  color: var(--color-text-warning);
+}
+
+.text--color-success {
+  color: var(--color-text-success);
+}
+
+.text--color-onbrand {
+  color: var(--color-text-onbrand);
+}
+
+.text--color-ondanger {
+  color: var(--color-text-ondanger);
+}
+
+.text--color-onwarning {
+  color: var(--color-text-onwarning);
+}
+
+.text--color-onsuccess {
+  color: var(--color-text-onsuccess);
+}
+
+.text--color-toolbar {
+  color: var(--color-text-toolbar);
+}

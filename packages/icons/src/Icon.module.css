@@ -1,0 +1,21 @@
+/**
+ * Icon Component Styles
+ *
+ * Base styles for all icon components
+ */
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  user-select: none;
+  color: currentColor;
+  fill: currentColor;
+}
+
+/* Ensure crisp rendering */
+.icon {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  shape-rendering: geometricPrecision;
+}
