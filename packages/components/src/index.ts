@@ -4,6 +4,9 @@
  * React component library implementing Figma UI3 design system
  */
 
+// Import styles
+import './styles.css';
+
 // Avatar
 export { Avatar } from './Avatar';
 export type {
