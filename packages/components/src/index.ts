@@ -147,3 +147,11 @@ export type {
 // Textarea
 export { Textarea } from './Textarea';
 export type { TextareaProps } from './Textarea';
+
+// Skeleton
+export { Skeleton } from './Skeleton';
+export type { SkeletonProps } from './Skeleton';
+
+// Link
+export { Link } from './Link';
+export type { LinkProps } from './Link';

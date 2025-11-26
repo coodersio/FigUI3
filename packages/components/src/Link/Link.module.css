@@ -1,0 +1,34 @@
+/* Link Component Styles */
+.link {
+  font-family: var(--font-family-base);
+  color: var(--text-brand);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--border-selected);
+  outline-offset: 2px;
+  border-radius: var(--radius-small);
+}
+
+/* Sizes */
+.sizeSmall {
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.sizeMedium {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.sizeLarge {
+  font-size: 13px;
+  line-height: 20px;
+}
