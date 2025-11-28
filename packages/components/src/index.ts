@@ -29,6 +29,14 @@ export type { ButtonProps, ButtonVariant, ButtonSize, ButtonType } from './Butto
 export { Checkbox } from './Checkbox';
 export type { CheckboxProps, CheckedState } from './Checkbox';
 
+// Collapsible
+export * as Collapsible from './Collapsible';
+export type {
+  RootProps as CollapsibleRootProps,
+  TriggerProps as CollapsibleTriggerProps,
+  ContentProps as CollapsibleContentProps,
+} from './Collapsible';
+
 // DropdownMenu
 export * as DropdownMenu from './DropdownMenu';
 export type {

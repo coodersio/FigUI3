@@ -10,7 +10,7 @@
   --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  --font-weight-normal: 400;
+  --font-weight-normal: 450;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
@@ -363,7 +363,7 @@ html {
   color: var(--color-text-menu);
   box-shadow: var(--elevation-menu);
   min-width: 140px;
-  z-index: 50;
+  z-index: 10000;
   outline: none;
   animation-duration: 150ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
@@ -371,6 +371,11 @@ html {
 
 .figui-MenuContent[data-state='open'] {
   animation-name: figui-menuContentShow;
+}
+
+/* Select dropdown matches trigger width */
+[data-radix-select-content].figui-MenuContent {
+  min-width: var(--radix-select-trigger-width);
 }
 
 @keyframes figui-menuContentShow {
@@ -704,6 +709,17 @@ html {
 
 .figui-Button--ghost:focus-visible {
   outline-color: var(--color-border-selected);
+}
+
+/* Ghost Icon Button - uses secondary icon color */
+.figui-Button--ghost.figui-Button--icon,
+.figui-Button--ghost.figui-Button--icon-toggle {
+  color: var(--color-icon-secondary);
+}
+
+.figui-Button--ghost.figui-Button--icon:hover:not(.figui-Button--disabled),
+.figui-Button--ghost.figui-Button--icon-toggle:hover:not(.figui-Button--disabled) {
+  color: var(--color-icon-default);
 }
 
 /* Destructive Variant */
@@ -1060,14 +1076,14 @@ html {
   box-sizing: border-box;
   white-space: nowrap;
   font-family: var(--font-family-base);
-  transition: all 0.2s ease;
-  height: 16px;
+  height: 14px;
   padding: 0 4px;
-  border-radius: var(--radius-medium);
-  font-size: 11px;
-  font-weight: var(--font-weight-medium);
-  line-height: 16px;
-  gap: 4px;
+  border-radius: var(--radius-small);
+  font-size: 9px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  gap: 2px;
 }
 
 .figui-Badge__icon {
@@ -1276,13 +1292,13 @@ html {
 }
 
 .figui-Text--body.figui-Text--strong {
-  font-weight: var(--font-weight-medium);
+  font-weight: 600; /* Semi-bold for visible strong text */
 }
 
 .figui-Text--body.figui-Text--size-large {
-  font-size: 13px;
-  line-height: 22px;
-  letter-spacing: -0.0325px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.01px;
 }
 
 .figui-Text--body.figui-Text--size-medium {
@@ -1292,9 +1308,9 @@ html {
 }
 
 .figui-Text--body.figui-Text--size-small {
-  font-size: 9px;
+  font-size: 10px;
   line-height: 14px;
-  letter-spacing: 0.045px;
+  letter-spacing: 0.01px;
 }
 
 /* Color Variants */
@@ -1919,9 +1935,7 @@ html {
   flex: 1 0 auto;
   min-width: 24px;
   height: 24px;
-  padding: 4px 8px;
   background-color: transparent;
-  border: 1px solid transparent;
   border-radius: var(--radius-medium);
   font-family: var(--font-family-base);
   font-size: 11px;
@@ -1931,26 +1945,26 @@ html {
   color: var(--color-text-secondary);
   white-space: nowrap;
   cursor: pointer;
-  --icon-color: var(--color-icon-secondary);
-}
-
-.figui-SegmentedControlItem:where(:has(svg):not(:has(span))) {
-  padding: 0;
-  width: 24px;
-  flex: 0 0 auto;
+  /* Override --color-icon for unselected state (for inline SVGs using fill="var(--color-icon)") */
+  --color-icon: var(--color-icon-secondary);
 }
 
 .figui-SegmentedControlItem svg {
   width: 16px;
   height: 16px;
-  color: var(--icon-color);
+  color: var(--color-icon);
 }
 
 .figui-SegmentedControlItem[data-state='on'] {
   background-color: var(--color-bg-default);
-  border-color: var(--color-border);
+  box-shadow: inset 0 0 0 1px var(--color-border);
   color: var(--color-text);
-  --icon-color: var(--color-icon);
+  /* Restore --color-icon for selected state */
+  --color-icon: #000000e5;
+}
+
+.figui-SegmentedControlItem[data-state='on'] svg {
+  color: #000000e5;
 }
 
 .figui-SegmentedControlItem:focus-visible {
@@ -1960,8 +1974,12 @@ html {
 
 .figui-SegmentedControlItem:disabled {
   color: var(--color-text-disabled);
-  --icon-color: var(--color-icon-disabled);
   cursor: not-allowed;
+  --color-icon: var(--color-icon-disabled);
+}
+
+.figui-SegmentedControlItem:disabled svg {
+  color: var(--color-icon-disabled);
 }
 
 /* ============================================================================
@@ -2363,7 +2381,7 @@ html {
   align-items: center;
   gap: 6px;
   padding: 4px 8px;
-  max-width: 200px;
+  max-width: 240px;
   background-color: var(--color-bg-tooltip, #1e1e1e);
   color: var(--color-text-tooltip, #ffffff);
   font-family: var(--font-family, Inter, system-ui, -apple-system, sans-serif);
@@ -2373,6 +2391,7 @@ html {
   letter-spacing: var(--letter-spacing, 0.005em);
   white-space: pre-wrap;
   word-break: break-word;
+  z-index: 10001;
   border-radius: var(--radius-medium, 5px);
   box-shadow:
     0px 0px 0.5px rgba(0, 0, 0, 0.15),
@@ -2502,11 +2521,11 @@ html {
 
 /* Overlay animation */
 .figui-DialogOverlay[data-state='open'] {
-  animation: figui-dialog-overlay-fade-in 200ms ease-out;
+  animation: figui-dialog-overlay-fade-in 180ms ease-in-out;
 }
 
 .figui-DialogOverlay[data-state='closed'] {
-  animation: figui-dialog-overlay-fade-out 150ms ease-in;
+  animation: figui-dialog-overlay-fade-out 150ms ease-in-out;
 }
 
 @keyframes figui-dialog-overlay-fade-in {
@@ -2585,11 +2604,11 @@ html {
 
 /* Content - Center animation */
 .figui-DialogContent--center[data-state='open'] {
-  animation: figui-dialog-center-open 200ms ease-out;
+  animation: figui-dialog-center-open 180ms ease-in-out;
 }
 
 .figui-DialogContent--center[data-state='closed'] {
-  animation: figui-dialog-center-close 150ms ease-in;
+  animation: figui-dialog-center-close 150ms ease-in-out;
 }
 
 @keyframes figui-dialog-center-open {
@@ -2616,11 +2635,11 @@ html {
 
 /* Content - Bottom sheet animation */
 .figui-DialogContent--bottom[data-state='open'] {
-  animation: figui-dialog-bottom-open 300ms ease-out;
+  animation: figui-dialog-bottom-open 180ms ease-in-out;
 }
 
 .figui-DialogContent--bottom[data-state='closed'] {
-  animation: figui-dialog-bottom-close 200ms ease-in;
+  animation: figui-dialog-bottom-close 150ms ease-in-out;
 }
 
 @keyframes figui-dialog-bottom-open {
@@ -2699,8 +2718,7 @@ html {
   justify-content: flex-end;
   box-sizing: border-box;
   flex-shrink: 0;
-  height: 40px;
-  padding: 4px 8px;
+  padding: 8px 12px;
   gap: 8px;
   background-color: var(--color-bg, #ffffff);
   border-top: 1px solid var(--color-border, rgba(0, 0, 0, 0.1));
@@ -3057,4 +3075,94 @@ html {
 
 .figma-dark .figui-Textarea::placeholder {
   color: var(--color-text-tertiary, rgba(255, 255, 255, 0.4));
+}
+
+/* ============================================================================
+   Collapsible
+   ============================================================================ */
+
+.figui-CollapsibleRoot {
+  :where(.figui-CollapsibleContent &) {
+    margin-left: -8px;
+  }
+}
+
+.figui-CollapsibleTrigger {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 8px 0;
+  font-family: var(--font-family-base, Inter, -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--color-text, #1e1e1e);
+  cursor: pointer;
+  border-radius: var(--radius-medium, 5px);
+  transition: background-color 0.15s ease;
+}
+
+.figui-CollapsibleTrigger:hover {
+  background-color: var(--color-bg-hover, rgba(0, 0, 0, 0.04));
+}
+
+.figui-CollapsibleIndicator {
+  color: var(--color-icon-secondary, rgba(0, 0, 0, 0.5));
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+[data-state='open'] > .figui-CollapsibleIndicator {
+  transform: rotate(90deg);
+}
+
+.figui-CollapsibleContent {
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+.figui-CollapsibleContent[data-state='open'] {
+  animation: figui-collapsible-open 0.2s ease-out;
+}
+
+.figui-CollapsibleContent[data-state='closed'] {
+  animation: figui-collapsible-close 0.15s ease-out;
+}
+
+@keyframes figui-collapsible-open {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes figui-collapsible-close {
+  from {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+/* Dark mode */
+.figma-dark .figui-CollapsibleTrigger {
+  color: var(--color-text, rgba(255, 255, 255, 0.9));
+}
+
+.figma-dark .figui-CollapsibleTrigger:hover {
+  background-color: var(--color-bg-hover, rgba(255, 255, 255, 0.06));
+}
+
+.figma-dark .figui-CollapsibleIndicator {
+  color: var(--color-icon-secondary, rgba(255, 255, 255, 0.5));
 }

@@ -172,10 +172,8 @@ const parseNumericValue = (
 
 const formatValue = (value: number, precision: number, suffix?: string): string => {
   const rounded = roundToPrecision(value, precision);
-  // If precision is 0, show as integer; otherwise show with specified decimal places
-  const formatted = precision === 0
-    ? Math.round(rounded).toString()
-    : rounded.toFixed(precision);
+  // Use template literal to naturally remove trailing zeros (like figma-kit)
+  const formatted = `${rounded}`;
   return suffix ? `${formatted}${suffix}` : formatted;
 };
 

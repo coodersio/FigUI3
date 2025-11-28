@@ -58,14 +58,14 @@
 
 /* Body Strong */
 .text--body.text--strong {
-  font-weight: var(--font-weight-medium);
+  font-weight: 600; /* Semi-bold for visible strong text */
 }
 
-/* Body Large: 13/22, tracking -0.0325px */
+/* Body Large: 12/16, tracking -0.01px (UI3 Section Title) */
 .text--body.text--size-large {
-  font-size: 13px;
-  line-height: 22px;
-  letter-spacing: -0.0325px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.01px;
 }
 
 /* Body Medium: 11/16, tracking 0.055px */
@@ -75,11 +75,11 @@
   letter-spacing: 0.055px;
 }
 
-/* Body Small: 9/14, tracking 0.045px */
+/* Body Small: 10/14, tracking 0.01px (UI3 Caption/Meta) */
 .text--body.text--size-small {
-  font-size: 9px;
+  font-size: 10px;
   line-height: 14px;
-  letter-spacing: 0.045px;
+  letter-spacing: 0.01px;
 }
 
 /* Color Variants */

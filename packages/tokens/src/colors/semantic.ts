@@ -183,7 +183,7 @@ export const semanticColors: { light: SemanticColorTokens; dark: SemanticColorTo
     },
     icon: {
       default: '#000000e5',
-      secondary: '#00000080',
+      secondary: '#00000090',
       tertiary: '#0000004d',
       disabled: '#0000004d',
       brand: '#007be5',
