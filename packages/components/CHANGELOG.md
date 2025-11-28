@@ -1,5 +1,21 @@
 # @figui3/components
 
+## 1.0.0
+
+### Major Changes
+
+- [`b9e3730`](https://github.com/coodersio/FigUI3/commit/b9e3730fe65e6329117797399094b02cfc59daf0) Thanks [@coodersio](https://github.com/coodersio)! - Add Link component
+
+### Minor Changes
+
+- [`554fedb`](https://github.com/coodersio/FigUI3/commit/554fedb3e7b70ee14f7e48948ad733c4155891ae) Thanks [@coodersio](https://github.com/coodersio)! - release
+
+### Patch Changes
+
+- Updated dependencies [[`b9e3730`](https://github.com/coodersio/FigUI3/commit/b9e3730fe65e6329117797399094b02cfc59daf0), [`554fedb`](https://github.com/coodersio/FigUI3/commit/554fedb3e7b70ee14f7e48948ad733c4155891ae)]:
+  - @figui3/icons@1.0.0
+  - @figui3/tokens@1.0.0
+
 ## 0.1.0
 
 ### Minor Changes
