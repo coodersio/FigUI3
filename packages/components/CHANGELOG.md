@@ -1,5 +1,11 @@
 # @figui3/components
 
+## 2.0.0
+
+### Major Changes
+
+- [`a0e7531`](https://github.com/coodersio/FigUI3/commit/a0e7531820ef36a46649a671eab347200d8f0b9f) Thanks [@coodersio](https://github.com/coodersio)! - update
+
 ## 1.0.0
 
 ### Major Changes
