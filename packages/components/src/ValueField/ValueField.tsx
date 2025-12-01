@@ -174,7 +174,8 @@ const formatValue = (value: number, precision: number, suffix?: string): string 
   const rounded = roundToPrecision(value, precision);
   // Use template literal to naturally remove trailing zeros (like figma-kit)
   const formatted = `${rounded}`;
-  return suffix ? `${formatted}${suffix}` : formatted;
+  // Don't append suffix here - use ValueField.Label for suffix display
+  return formatted;
 };
 
 const Numeric = React.forwardRef<HTMLInputElement, NumericProps>((props, forwardedRef) => {

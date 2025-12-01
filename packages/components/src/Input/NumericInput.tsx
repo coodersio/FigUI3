@@ -82,11 +82,10 @@ const parseNumericValue = (
 // Format value for display
 const formatValue = (value: number, precision: number, suffix?: string): string => {
   const rounded = roundToPrecision(value, precision);
-  // If precision is 0, show as integer; otherwise show with specified decimal places
-  const formatted = precision === 0
-    ? Math.round(rounded).toString()
-    : rounded.toFixed(precision);
-  return suffix ? `${formatted}${suffix}` : formatted;
+  // Use template literal to naturally remove trailing zeros (like figma-kit and ValueField)
+  const formatted = `${rounded}`;
+  // Don't append suffix here - it will be rendered separately as a span
+  return formatted;
 };
 
 export const NumericInput = React.forwardRef<HTMLInputElement, NumericInputProps>(

@@ -216,3 +216,98 @@ function WidthSelect({ width, label }: { width: 'auto' | 'col1' | 'col2' | 'col3
     </Select.Root>
   );
 }
+
+// ICC Profile Example - Test scrolling with many items
+export const ICCProfileExample: Story = {
+  render: function ICCProfileSelect() {
+    const [value, setValue] = React.useState('default');
+
+    return (
+      <div style={{ padding: '20px' }}>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '14px', fontWeight: 600 }}>
+          ICC Profile Select (Scroll Test)
+        </h3>
+        <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
+          This example tests scrolling with many grouped items, similar to the Print Pro plugin.
+        </p>
+
+        <Select.Root value={value} onValueChange={setValue}>
+          <Select.Trigger />
+          <Select.Content>
+            <Select.Item value="default">
+              Default
+            </Select.Item>
+
+            <Select.Group>
+              <Select.Label>European Standards</Select.Label>
+              <Select.Item value="fogra51">
+                PSO Coated v3 [FOGRA51] ⭐
+              </Select.Item>
+              <Select.Item value="fogra39">
+                ISO Coated v2 [FOGRA39] (Most Used)
+              </Select.Item>
+              <Select.Item value="fogra59">
+                eciCMYK v2 [FOGRA59]
+              </Select.Item>
+              <Select.Item value="iso-coated-v2-300">
+                ISO Coated v2 300%
+              </Select.Item>
+              <Select.Item value="coated-fogra39">
+                Coated FOGRA39
+              </Select.Item>
+            </Select.Group>
+
+            <Select.Group>
+              <Select.Label>North American Standards</Select.Label>
+              <Select.Item value="us-web-coated">
+                U.S. Web Coated (SWOP) v2 ⭐
+              </Select.Item>
+              <Select.Item value="gracol-2006">
+                GRACoL 2006 Coated
+              </Select.Item>
+              <Select.Item value="swop-2006-grade3">
+                SWOP 2006 Grade #3
+              </Select.Item>
+              <Select.Item value="swop-2006-grade5">
+                SWOP 2006 Grade #5
+              </Select.Item>
+            </Select.Group>
+
+            <Select.Group>
+              <Select.Label>Japan Standards</Select.Label>
+              <Select.Item value="japan-color-2011">
+                Japan Color 2011 Coated ⭐
+              </Select.Item>
+              <Select.Item value="japan-color">
+                Japan Color 2001 Coated
+              </Select.Item>
+              <Select.Item value="japan-color-2003-web">
+                Japan Color 2003 Web
+              </Select.Item>
+              <Select.Item value="japan-color-2001-uncoated">
+                Japan Color 2001 Uncoated
+              </Select.Item>
+              <Select.Item value="japan-color-2002-newspaper">
+                Japan Color 2002 Newspaper
+              </Select.Item>
+              <Select.Item value="japan-web-coated">
+                Japan Web Coated (Ad)
+              </Select.Item>
+            </Select.Group>
+
+            <Select.Item value="custom">
+              📁 Upload Your Own ICC File
+            </Select.Item>
+          </Select.Content>
+        </Select.Root>
+
+        <p style={{ marginTop: '16px', fontSize: '11px', color: 'var(--color-text-secondary)' }}>
+          Selected: <strong>{value}</strong>
+        </p>
+        <p style={{ marginTop: '8px', fontSize: '11px', color: 'var(--color-text-tertiary)' }}>
+          ✅ Test: Can you scroll to see "Japan Web Coated (Ad)" and "Upload Your Own ICC File"?
+        </p>
+      </div>
+    );
+  },
+};

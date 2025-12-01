@@ -9,6 +9,8 @@ interface SwitchProps extends Omit<RadixSwitch.SwitchProps, 'asChild'> {
   label?: string;
   /** Description text below the label */
   description?: string;
+  /** Size of the switch */
+  size?: 'default' | 'small';
 }
 
 /**
@@ -20,7 +22,7 @@ interface SwitchProps extends Omit<RadixSwitch.SwitchProps, 'asChild'> {
  * - Border radius: full
  */
 const Switch = React.forwardRef<SwitchElement, SwitchProps>((props, ref) => {
-  const { className, label, description, id, disabled, ...switchProps } = props;
+  const { className, label, description, id, disabled, size = 'default', ...switchProps } = props;
   const switchId = id || React.useId();
 
   const switchElement = (
@@ -28,7 +30,11 @@ const Switch = React.forwardRef<SwitchElement, SwitchProps>((props, ref) => {
       ref={ref}
       id={switchId}
       disabled={disabled}
-      className={clsx('figui-SwitchRoot', className)}
+      className={clsx(
+        'figui-SwitchRoot',
+        size === 'small' && 'figui-SwitchRoot--small',
+        className
+      )}
       {...switchProps}
     >
       <RadixSwitch.Thumb className="figui-SwitchThumb" />
