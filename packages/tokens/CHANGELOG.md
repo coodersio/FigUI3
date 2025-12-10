@@ -1,5 +1,11 @@
 # @figui3/tokens
 
+## 5.0.0
+
+### Major Changes
+
+- [`b69b19d`](https://github.com/coodersio/FigUI3/commit/b69b19dda0a573e42b24735f3670c4d6ead15fd9) Thanks [@coodersio](https://github.com/coodersio)! - bump up version
+
 ## 4.0.0
 
 ### Major Changes
