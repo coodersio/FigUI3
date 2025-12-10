@@ -1,5 +1,17 @@
 # @figui3/components
 
+## 4.0.0
+
+### Major Changes
+
+- [`a43af2d`](https://github.com/coodersio/FigUI3/commit/a43af2d2016b109e83f926440dbfe29118f317f2) Thanks [@coodersio](https://github.com/coodersio)! - test
+
+### Patch Changes
+
+- Updated dependencies [[`a43af2d`](https://github.com/coodersio/FigUI3/commit/a43af2d2016b109e83f926440dbfe29118f317f2)]:
+  - @figui3/icons@4.0.0
+  - @figui3/tokens@4.0.0
+
 ## 2.0.0
 
 ### Major Changes

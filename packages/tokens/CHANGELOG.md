@@ -1,5 +1,11 @@
 # @figui3/tokens
 
+## 4.0.0
+
+### Major Changes
+
+- [`a43af2d`](https://github.com/coodersio/FigUI3/commit/a43af2d2016b109e83f926440dbfe29118f317f2) Thanks [@coodersio](https://github.com/coodersio)! - test
+
 ## 1.0.0
 
 ### Major Changes
